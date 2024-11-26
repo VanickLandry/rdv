@@ -1,0 +1,251 @@
+CrdmgrParameter:
+  Parameter_rais_bas:
+    is_active: 1
+    type_parametre: rais_bas
+    code_parametre: rais_bas
+    label_param: rais_bas
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: rais_bas
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_rais_haut:
+    is_active: 1
+    type_parametre: rais_haut
+    code_parametre: rais_haut
+    label_param: rais_haut
+    valeur_string: 20000
+    valeur_numeric: 580
+    description_param: rais_haut
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_couvre_joint:
+    is_active: 1
+    type_parametre: hauteur_couvre_joint
+    code_parametre: hauteur_couvre_joint
+    label_param: hauteur_couvre_joint
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: hauteur_couvre_joint
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_couvre_joint:
+    is_active: 1
+    type_parametre: largeur_couvre_joint
+    code_parametre: largeur_couvre_joint
+    label_param: largeur_couvre_joint
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: largeur_couvre_joint
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_couvre_joint_un:
+    is_active: 1
+    type_parametre: hauteur_couvre_joint_un
+    code_parametre: hauteur_couvre_joint_un
+    label_param: hauteur_couvre_joint_un
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: hauteur_couvre_joint_un
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_couvre_joint_un:
+    is_active: 1
+    type_parametre: largeur_couvre_joint_un
+    code_parametre: largeur_couvre_joint_un
+    label_param: largeur_couvre_joint_un
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: largeur_couvre_joint_un
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_couvre_joint_deux:
+    is_active: 1
+    type_parametre: hauteur_couvre_joint_deux
+    code_parametre: hauteur_couvre_joint_deux
+    label_param: hauteur_couvre_joint_deux
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: hauteur_couvre_joint_deux
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_couvre_joint_deux:
+    is_active: 1
+    type_parametre: largeur_couvre_joint_deux
+    code_parametre: largeur_couvre_joint_deux
+    label_param: largeur_couvre_joint_deux
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: largeur_couvre_joint_deux
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_dormant:
+    is_active: 1
+    type_parametre: dormant
+    code_parametre: dormant
+    label_param: dormant
+    valeur_string: 40000
+    valeur_numeric: 580
+    description_param: c
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_sernie:
+    is_active: 1
+    type_parametre: sernie
+    code_parametre: sernie
+    label_param: sernie
+    valeur_string: 50000
+    valeur_numeric: 580
+    description_param: sernie
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_chicone:
+    is_active: 1
+    type_parametre: chicone
+    code_parametre: chicone
+    label_param: chicone
+    valeur_string: 60000
+    valeur_numeric: 580
+    description_param: chicone
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_traverse:
+    is_active: 1
+    type_parametre: traverse
+    code_parametre: traverse
+    label_param: traverse
+    valeur_string: 70000
+    valeur_numeric: 580
+    description_param: traverse
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_vitre:
+    is_active: 1
+    type_parametre: vitre
+    code_parametre: vitre
+    label_param: vitre
+    valeur_string: 80000
+    valeur_numeric: 580
+    description_param: vitre
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_Equerres_port:
+    is_active: 1
+    type_parametre: accessoire
+    code_parametre: Equerres
+    label_param: Equerres port
+    valeur_string: 4
+    valeur_numeric: 7000
+    description_param: accessoire
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_pommelles:
+    is_active: 1
+    type_parametre: accessoire
+    code_parametre: pommelles
+    label_param: pommelles
+    valeur_string: 2
+    valeur_numeric: 5000
+    description_param: accessoire
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_Serrure_complet:
+    is_active: 1
+    type_parametre: accessoire
+    code_parametre: Serrure
+    label_param: Serrure complet
+    valeur_string: 1 
+    valeur_numeric: 1000
+    description_param: accessoire
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_dormant:
+    is_active: 1
+    type_parametre: largeur_dormant
+    code_parametre: largeur_dormant
+    label_param: largeur_dormant
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: largeur_dormant
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_dormant:
+    is_active: 1
+    type_parametre: hauteur_dormant
+    code_parametre: hauteur_dormant
+    label_param: hauteur_dormant
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: hauteur_dormant
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_parclose30:
+    is_active: 1
+    type_parametre: hauteur_parclose30
+    code_parametre: hauteur_parclose30
+    label_param: hauteur_parclose30
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: hauteur_parclose30
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_parclose30:
+    is_active: 1
+    type_parametre: largeur_parclose30
+    code_parametre: largeur_parclose30
+    label_param: largeur_parclose30
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: largeur_parclose30
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hauteur_zporte:
+    is_active: 1
+    type_parametre: hauteur_zporte
+    code_parametre: hauteur_zporte
+    label_param: hauteur_zporte
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: hauteur_zporte
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_largeur_zporte:
+    is_active: 1
+    type_parametre: largeur_zporte
+    code_parametre: largeur_zporte
+    label_param: largeur_zporte
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: largeur_zporte
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_traverse140:
+    is_active: 1
+    type_parametre: traverse140
+    code_parametre: traverse140
+    label_param: traverse140
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: traverse140
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_ljb:
+    is_active: 1
+    type_parametre: ljb
+    code_parametre: ljb
+    label_param: largeur_joint_bourrage
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: ljb
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Parameter_hjb:
+    is_active: 1
+    type_parametre: hjb
+    code_parametre: hjb
+    label_param: hauteur_joint_bourrage
+    valeur_string: 10000
+    valeur_numeric: 580
+    description_param: hjb
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]

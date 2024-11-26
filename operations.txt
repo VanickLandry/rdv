@@ -1,0 +1,31 @@
+php lib\vendor\symfony\data\bin\symfony generate:project sf_achuproject
+php E:\dev_symfony\symfony-1.4.11\\data\bin\symfony generate:project tuto
+php symfony generate:project --installer=\path\to\symfony\data\bin\sandbox_installer.php
+php symfony test:all --only-failed
+php symfony generate:app nomdelapplication
+php symfony generate:app frontend
+php symfony doctrine:build --all
+php symfony doctrine:data-load
+php symfony doctrine:build --all --no-confirmation
+php symfony doctrine:generate-module --with-show  appname modulename ObjectClass
+php symfony doctrine:generate-module --with-show  frontend mdlip MnIp
+php symfony doctrine:generate-module --with-show  frontend mdldomaine  MnDns
+php symfony doctrine:generate-module --with-show  frontend demo  GlassPrice
+php symfony doctrine:generate-module --with-show  frontend estim  Estim
+php symfony doctrine:generate-module --with-show  frontend mdlport  MnPort
+php symfony doctrine:generate-module --with-show  frontend client  Client
+php symfony doctrine:generate-module --with-show  frontend detailmirroir  RdDetailMirroir
+php symfony doctrine:generate-module --with-show  frontend facture  RdDetailMirroir
+php symfony doctrine:generate-module --with-show  frontend person  Person
+php symfony doctrine:generate-module --with-show  frontend professor  Professor
+php symfony doctrine:generate-module --with-show  frontend student  Student
+etailMirroirRdDetailMirroir
+php symfony doctrine:generate-module --with-show  frontend book  Bookmark CentreMare --module=mare
+php symfony doctrine:generate-module --with-show  frontend mare  CanardMare
+php symfony doctrine:generate-module --with-show  frontend canardcatsymfony doctrine:generate-admin backend CanardCategorie --module=canardcategorie
+
+egorie  CanardCategorie
+symfony doctrine:generate-admin backend CanardMare --module=mare
+symfony doctrine:generate-admin frontend  GlassPrice  --module=adminglass --theme=tmcTwitterBootstrap
+symfony doctrine:generate-admin frontend  Estimation  --module=adminestimation --theme=tmcTwitterBootstrap
+

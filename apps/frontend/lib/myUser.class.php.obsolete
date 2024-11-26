@@ -1,0 +1,185 @@
+<?php
+
+// apps/frontend/lib/myUser.class.php
+// La classe myUser substitue la classe de base de symfony par défaut sfUser avec les comportements spécifiques de l'application
+// Par défaut, la classe myUser étend sfBasicSecurityUser, et non sfUser.
+// -- dans le code d'une action
+// $this->getUser()->addJobToHistory($this->job);
+// -- dans le code de myUser.php
+// $this->getAttributeHolder()->remove('job_history');
+// function getAttribute($name, $default = null, $ns = null)
+// $ids = $this->getAttribute('job_history', array());
+// $this->setAttribute('job_history', array_slice($ids, 0, 3));
+// (bool) hasFlash ($name) Browse code
+// $name	The name of the flash variable
+// Returns true if a flash variable of the specified name exists.
+// -- dans le code d'un Form ou d'un Filter
+// $usr = sfContext::getInstance()->getUser();
+
+class xxxxmyUser extends sfGuardSecurityUser // sfBasicSecurityUser
+{
+
+	// <div id="description"> obtenir le pseudo de l'user </div>		
+	public function getUserNickname()
+	{
+		// getUsername(), getEmail(), getName(), getUsername()
+		return $this->getGuardUser()->getUsername();
+	}
+	
+
+	// <div id="description"> methode static: obtenir l'objet utilisateur courant pour usage dans les code des la vue: Form, ou Filter </div>		
+	// <div id="sample"> $usr = myUser::getCurrentUser(); </div>		
+	public static function getCurrentUser()
+	{
+		return sfContext::getInstance()->getUser();
+	}
+	
+	// <div id="description"> obtenir l'id de l'utilisateur courant </div>		
+	public function getUserId()
+	{
+		return $this->getGuardUser()->getId();
+	}
+	
+  // <div id="description"> obtenir l'id de l'institution </div>		
+	public function getInstitutionId()
+	{
+		$s_getinstitutionid_attrib_key='myUser::getInstitutionId';
+
+        if ( $this->getAttribute ($s_getinstitutionid_attrib_key, NULL) != NULL)
+        {
+            return $this->getAttribute ($s_getinstitutionid_attrib_key, NULL);
+        }
+        
+        // preciser aussi l'agence et l'institution d'appartenance du client
+		$a_affectations = $this->getGuardUser()->getCrdmgrUserAgency();
+		$o_agency = $a_affectations [0] ->getCtrAgency();
+		//
+        $this->setAttribute($s_getinstitutionid_attrib_key, $o_agency->getInstitutionId());
+        //
+		return $this->getAttribute ($s_getinstitutionid_attrib_key, NULL);
+	}
+
+	// <div id="description"> obtenir l'id de l'intitution d'assurance par excellence du système: de nom Saar-Vie </div>		
+	public function getRootInsuranceInstitutionId()
+	{
+		// ps: mise en cache au besoin afin de pas saturer la bd
+		
+		// constante
+		$c_root_insurance_attrib_key='root_insurance_institution_id';
+		$c_root_insurance_name='Saar-Vie';
+
+		// verif du cache
+		if (! $this->hasFlash ($c_root_insurance_attrib_key)
+				|| $this->getAttribute ($c_root_insurance_attrib_key, NULL) == NULL)
+		{
+			// recherche pour maj du cache
+			$a_institutions = Doctrine::getTable('CrdmgrInstitution')->createQuery('a')
+					->addWhere("nom_institution = ?", $c_root_insurance_name)
+					->addWhere("is_active = ?", 1)
+					->orderBy('a.id asc, a.nom_institution asc')
+				  ->execute();
+
+			// maj du cache si un seul primary existe
+			if (count($a_institutions) != 1)
+			{
+				return NULL;
+			}
+			$this->setAttribute($c_root_insurance_attrib_key, $a_institutions[0]->getId());
+		}
+
+		// fin
+		return $this->getAttribute ($c_root_insurance_attrib_key, NULL);
+	}
+
+	// <div id="description"> Savoir si l'user est un operateur de l'assureur racine/owner </div>	
+	public function hasRootInsurancePermission()
+	{
+		// verif
+		if ($this->getRootInsuranceInstitutionId() != NULL && $this->getInstitutionId() == $this->getRootInsuranceInstitutionId() )
+		{
+			return true;
+		}
+		// fin
+		return false;
+	}
+
+	// <div id="description"> Savoir si l'user est un master operateur de l'assureur racine/owner </div>	
+	public function hasMasterOperatorRootInsurancePermission()
+	{
+
+
+		// verifier les permissions
+		if ($this->hasRootInsurancePermission() && $this->hasCredential('master_operator'))
+		{
+			return true;
+		}
+
+		// fin
+		return false;
+	}
+
+
+	// <div id="description"> obtenir le code du statut de publication et verouillage des elements dans le workflow </div>		
+	public function getWorkflowLockedPublishedStatusCode()
+	{
+		// ps: mise en cache au besoin afin de pas saturer la bd
+
+
+		// constante
+		$c_item_attrib_key='workflow_status_locked-and-published_code';
+		$c_item_name='workflow_status_locked-and-published';
+
+		// verif du cache
+		if (! $this->hasFlash ($c_item_attrib_key) 
+				|| $this->getAttribute ($c_item_attrib_key, NULL) == NULL )
+		{
+			// recherche pour maj du cache
+			$a_items = Doctrine::getTable('CrdmgrParameter')->createQuery('a')
+					->addWhere("a.code_parametre = ?", $c_item_name)
+					->addWhere('a.type_parametre = ?', 'workflow_status')
+					->addWhere("is_active = ?", 1)
+					->orderBy('a.code_parametre asc, a.code_parametre asc')
+				  ->execute();
+			
+
+			// maj du cache si un seul primary existe
+			if (count($a_items) != 1)
+			{
+				return NULL;
+			}
+			$this->setAttribute($c_item_attrib_key, $a_items[0]->getCodeParametre());
+		}
+
+		// fin
+		return $this->getAttribute ($c_item_attrib_key, NULL);
+	}
+
+  #REGION LastSelectedCustomerId
+	// <div id="description"> obtenir le dernier client id selectionné depuis la variable de session </div>		
+	public function getLastSelectedCustomerId()
+	{
+    return $this->getAttribute ('LastSelectedCustomerId', NULL);
+  }
+	// <div id="description"> preciser le dernier client id selectionné depuis la variable de session </div>		
+	public function setLastSelectedCustomerId($p_value)
+	{
+    return $this->setAttribute ('LastSelectedCustomerId', $p_value);
+  }
+  #END_REGION LastSelectedCustomerId
+
+  #REGION IsBindToggleActivated
+	// @desc: obtenir le dernier client id selectionné depuis la variable de session
+	// @type: Valeur binaire : 0 ou 1
+	public function getIsBindToggleActivated()
+	{
+    return $this->getAttribute ('IsBindToggleActivated', 0);
+  }
+	// @desc: preciser le dernier client id selectionné depuis la variable de session
+	public function setIsBindToggleActivated($p_value)
+	{
+    return $this->setAttribute ('IsBindToggleActivated', $p_value);
+  }
+  #END_REGION IsBindToggleActivated
+
+
+}

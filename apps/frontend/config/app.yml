@@ -1,0 +1,96 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+
+#all:
+
+# default values
+all:
+    max_items_on_page: 10
+    webapp_rootdir_url: http://127.0.0.1/simuce/web/
+    # webapp_rootdir_url: http://www.saar-vie.com/creditapplication/web
+    webapp_minimal_credential: assureur, bank_operator, master_operator
+    webapp_name: simuce-frontend
+    webapp_admin_credential: administrateur
+    tmcTwitterBootstrapPlugin:
+        dashboard_name: Administration 
+# NAVBAR options
+        # navbar_inverse: false          # true= Black navbar; false= standard  (silver) navbar
+        # navbar_fixed_top: true        # true= navbar stay on top; false= navbar disappear on scroll
+#TABLE options
+        # table_bordered: true          # true= add border to the main table (the record list)
+        # table_striped: false           # true= alternated dark and light rows (stripes)
+        # table-condensed: true         # true= narrow rows
+        # table_ultracondensed: true    # true= even more narrow rows
+        # table_hover: true             # true= highlight row on mouse over
+        # tr_hover_color: "#d9edf7"     # The tr highlight  on mouse over. Use " (quotation marks) to use the number sign as value
+        # thead_type: error             # possible  (success, error, warning and info or define your own types in styles.css)
+        # thead_color: "#dff0d8"        # Set color to the table head (overwrite the thead_type option)
+        # tr_action_hover_color: false  # true= highlight the action cell on row´s mouse over (the last cell)
+
+# PAGINATION options
+        show_top_paginator: true      # true= Show the pagination on top of the table 
+        show_botton_paginator: false  # true= Show the pagination on bottom of the table
+        show_per_page: true           # true= Show a "max record per page" selector
+        per_page_text: rec per page   # The text show in the "max record per page" selector	
+        per_page_values: "1;5;10"  # The list of selected values in "max record per page" selector
+        per_page_prefix:  show        # Prefix for every value, ex: Show 1 ..., Show 5...
+        per_page_sufix: rec           # Suffix for every value, ex: ...1 record, ...5 record
+        per_page_size: input-large    # the size of the selected (possibles values: input-mini, input-small, input-medium, input-large, input-xlarge, input-xxlarge)
+
+# BUTTONS OPTIONS
+# NEW Button options
+        new_button_type: btn-success       # btn-primary; btn-info; btn-success; btn-warning; btn-danger; btn-inverse; btn-link btn-normal (default); 
+        new_button_size: btn-small         # btn-large; btn-normal (default size); btn-small; btn-mini; btn-block(not recommended)
+        new_button_icon: icon-plus         # 140 possible icons search in the TwitterBootstrap documentation(http://twitter.github.com/bootstrap/base-css.html#icons)
+        new_button_icon_color: icon-white  # Icon color, just white, any other produce black icon
+
+# FILTER Button options (same single options of the new button)
+        filter_button_type:                     
+        filter_button_size: btn-small          
+        filter_button_icon: icon-filter
+        filter_button_icon_color: icon-black
+
+# DELETE Button options (same single options of the new button)
+        delete_button_type: 
+        delete_button_size: btn-small
+        delete_button_icon: icon-trash
+        delete_button_icon_color: icon-white
+
+# EDIT Button options (same single options of the new button)
+        edit_button_type: 
+        edit_button_size: btn-small
+        edit_button_icon: icon-pencil
+        edit_button_icon_color: icon-black
+
+# SHOW Button options (same single options of the new button)
+        show_button_type:
+        show_button_size: btn-small
+        show_button_icon: 
+        show_button_icon_color: icon-black
+
+# GO Button options (same single options of the new button, not icon allow)
+        go_button_type: btn-inverse
+        go_button_size: btn-small
+
+# BATCH Button options (same single options of the new button, not icon allow)
+        batch_button_type: btn-inverse
+        batch_button_size: btn-small
+        batch_select_size: input-large # Possibles values: input-mini, input-small, input-medium, input-large, input-xlarge, input-xxlarge
+
+# LIST Button options (same single options of the new button)
+        list_button_type: 
+        list_button_size: 
+        list_button_icon: 
+        list_button_icon_color: 
+
+# SAVE Button options (same single options of the new button)
+        save_button_type: 
+        save_button_size: 
+        save_button_icon: 
+        save_button_icon_color: 
+
+# SAVE AND NEW Button options (same single options of the new button, not icon allow)
+        savenew_button_type: 
+        savenew_button_size: 

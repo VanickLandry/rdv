@@ -1,0 +1,665 @@
+Apr 24 21:23:32 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:23:32 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:23:32 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:23:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:23:33 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:23:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:23:33 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:23:33 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 24 21:23:33 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 24 21:23:33 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 21:23:33 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 21:23:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 24 21:23:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:23:33 symfony [info] {sfWebDebugLogger} Configuration 939.20 ms (9)
+Apr 24 21:23:33 symfony [info] {sfWebDebugLogger} Factories 299.19 ms (1)
+Apr 24 21:23:33 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 18.14 ms (1)
+Apr 24 21:23:33 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 65.76 ms (1)
+Apr 24 21:23:33 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 7.54 ms (1)
+Apr 24 21:23:33 symfony [info] {sfWebResponse} Send content (36189 o)
+Apr 24 21:23:42 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:23:42 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:23:42 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:23:42 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:23:42 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:23:42 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:23:42 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:23:43 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 21:23:43 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 21:23:43 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:23:43 symfony [info] {sfWebDebugLogger} Configuration 916.60 ms (10)
+Apr 24 21:23:43 symfony [info] {sfWebDebugLogger} Factories 110.52 ms (1)
+Apr 24 21:23:43 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1200.42 ms (1)
+Apr 24 21:28:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:28:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:28:00 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:28:01 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:28:01 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:28:01 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:28:01 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:28:02 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 21:28:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 21:28:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:28:02 symfony [info] {sfWebDebugLogger} Configuration 891.55 ms (10)
+Apr 24 21:28:02 symfony [info] {sfWebDebugLogger} Factories 137.84 ms (1)
+Apr 24 21:28:02 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1270.54 ms (1)
+Apr 24 21:29:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:29:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:29:09 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:29:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:29:09 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:29:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:29:09 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:29:09 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 24 21:29:09 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 24 21:29:09 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 21:29:09 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 21:29:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 24 21:29:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:29:09 symfony [info] {sfWebDebugLogger} Configuration 66.83 ms (9)
+Apr 24 21:29:09 symfony [info] {sfWebDebugLogger} Factories 131.13 ms (1)
+Apr 24 21:29:09 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 23.79 ms (1)
+Apr 24 21:29:09 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 74.78 ms (1)
+Apr 24 21:29:09 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 10.20 ms (1)
+Apr 24 21:29:09 symfony [info] {sfWebResponse} Send content (36189 o)
+Apr 24 21:38:54 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:38:54 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:38:54 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:38:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:38:54 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:38:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:38:54 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:38:55 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 21:38:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 21:38:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:38:55 symfony [info] {sfWebDebugLogger} Configuration 923.67 ms (10)
+Apr 24 21:38:55 symfony [info] {sfWebDebugLogger} Factories 135.09 ms (1)
+Apr 24 21:38:55 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1325.48 ms (1)
+Apr 24 21:46:49 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 21:46:49 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 21:46:49 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 21:46:49 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 21:46:49 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 21:46:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 21:46:49 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 21:46:50 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 21:46:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 21:46:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 21:46:50 symfony [info] {sfWebDebugLogger} Configuration 910.44 ms (10)
+Apr 24 21:46:50 symfony [info] {sfWebDebugLogger} Factories 133.01 ms (1)
+Apr 24 21:46:50 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1131.70 ms (1)
+Apr 24 22:02:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 22:02:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 22:02:36 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 22:02:36 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 22:02:36 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 22:02:36 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 22:02:36 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 22:02:37 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 22:02:38 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 22:02:38 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 22:02:38 symfony [info] {sfWebDebugLogger} Configuration 903.59 ms (10)
+Apr 24 22:02:38 symfony [info] {sfWebDebugLogger} Factories 120.63 ms (1)
+Apr 24 22:02:38 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1125.85 ms (1)
+Apr 24 23:39:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 23:39:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 23:39:04 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 23:39:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 23:39:04 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 23:39:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 23:39:04 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 23:39:04 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 24 23:39:04 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 24 23:39:04 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 23:39:04 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 24 23:39:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 24 23:39:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 23:39:04 symfony [info] {sfWebDebugLogger} Configuration 917.03 ms (9)
+Apr 24 23:39:04 symfony [info] {sfWebDebugLogger} Factories 299.15 ms (1)
+Apr 24 23:39:04 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 19.83 ms (1)
+Apr 24 23:39:04 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 57.28 ms (1)
+Apr 24 23:39:04 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 7.04 ms (1)
+Apr 24 23:39:05 symfony [info] {sfWebResponse} Send content (36313 o)
+Apr 24 23:39:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 24 23:39:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 24 23:39:15 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 24 23:39:16 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 24 23:39:16 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 24 23:39:16 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 24 23:39:16 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 24 23:39:17 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 24 23:39:17 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 24 23:39:17 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 24 23:39:17 symfony [info] {sfWebDebugLogger} Configuration 904.14 ms (10)
+Apr 24 23:39:17 symfony [info] {sfWebDebugLogger} Factories 127.05 ms (1)
+Apr 24 23:39:17 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1208.02 ms (1)
+Apr 25 11:24:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 11:24:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 11:24:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 11:24:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 11:24:31 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 11:24:31 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 11:24:31 symfony [err] {Doctrine_Connection_Exception} PDO Connection Error: SQLSTATE[42000] [1049] Base 'dbs_c318401_credit_manager' inconnue
+Apr 25 11:24:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 11:24:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 11:24:31 symfony [info] {sfWebDebugLogger} Configuration 280.97 ms (9)
+Apr 25 11:24:31 symfony [info] {sfWebDebugLogger} Factories 502.26 ms (1)
+Apr 25 11:26:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 11:26:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 11:26:17 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 11:26:17 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 11:26:17 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 11:26:17 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 11:26:18 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 11:26:18 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 11:26:18 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 11:26:18 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 11:26:18 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 11:26:18 symfony [info] {sfWebDebugLogger} Configuration 69.27 ms (8)
+Apr 25 11:26:18 symfony [info] {sfWebDebugLogger} Factories 153.14 ms (1)
+Apr 25 11:26:18 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 11:30:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 11:30:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 11:30:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 11:30:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 11:30:30 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 11:30:30 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 11:30:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 11:30:30 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 11:30:30 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 11:30:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 11:30:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 11:30:30 symfony [info] {sfWebDebugLogger} Configuration 868.96 ms (9)
+Apr 25 11:30:30 symfony [info] {sfWebDebugLogger} Factories 133.71 ms (1)
+Apr 25 11:30:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 11:34:51 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 11:34:51 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 11:34:51 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 11:34:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 11:34:51 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 11:34:51 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 11:34:52 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 25 11:34:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 11:34:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 11:34:52 symfony [info] {sfWebDebugLogger} Configuration 902.46 ms (10)
+Apr 25 11:34:52 symfony [info] {sfWebDebugLogger} Factories 135.20 ms (1)
+Apr 25 11:35:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 11:35:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 11:35:43 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 11:35:44 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 11:35:44 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 11:35:44 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 11:35:44 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 11:35:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 11:35:44 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 11:35:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 11:35:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 11:35:44 symfony [info] {sfWebDebugLogger} Configuration 38.05 ms (8)
+Apr 25 11:35:44 symfony [info] {sfWebDebugLogger} Factories 135.15 ms (1)
+Apr 25 11:35:44 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 12:14:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:14:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:14:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 12:14:04 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 93 (session_start() [<a href='function.session-start'>function.session-start</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 12:14:04 symfony [info] {sfBasicSecurityFilter} Action "welcome/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:14:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 12:14:04 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 12:14:04 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 12:14:04 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 12:14:04 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:14:04 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:14:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 25 12:14:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:14:04 symfony [info] {sfWebDebugLogger} Configuration 1015.42 ms (12)
+Apr 25 12:14:04 symfony [info] {sfWebDebugLogger} Factories 183.17 ms (1)
+Apr 25 12:14:04 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 92.53 ms (1)
+Apr 25 12:14:04 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 299.30 ms (1)
+Apr 25 12:14:04 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 61.07 ms (1)
+Apr 25 12:14:04 symfony [info] {sfWebResponse} Send content (37479 o)
+Apr 25 12:14:04 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:04 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (c:/wamp/tmp))
+Apr 25 12:14:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:14:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:14:29 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 12:14:29 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 93 (session_start() [<a href='function.session-start'>function.session-start</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:14:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:14:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 12:14:29 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 12:14:30 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 25 12:14:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 12:14:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:14:30 symfony [info] {sfWebDebugLogger} Configuration 914.42 ms (10)
+Apr 25 12:14:30 symfony [info] {sfWebDebugLogger} Factories 138.83 ms (1)
+Apr 25 12:14:30 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1324.60 ms (1)
+Apr 25 12:14:30 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:30 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (c:/wamp/tmp))
+Apr 25 12:14:40 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:14:40 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:14:40 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 12:14:40 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 93 (session_start() [<a href='function.session-start'>function.session-start</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 12:14:40 symfony [info] {sfBasicSecurityFilter} Action "welcome/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:14:40 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 12:14:40 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 12:14:40 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 12:14:40 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 12:14:40 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:14:40 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:14:40 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 25 12:14:40 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:14:40 symfony [info] {sfWebDebugLogger} Configuration 97.95 ms (12)
+Apr 25 12:14:40 symfony [info] {sfWebDebugLogger} Factories 188.01 ms (1)
+Apr 25 12:14:40 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 25.14 ms (1)
+Apr 25 12:14:40 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 83.88 ms (1)
+Apr 25 12:14:40 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 10.89 ms (1)
+Apr 25 12:14:40 symfony [info] {sfWebResponse} Send content (37443 o)
+Apr 25 12:14:40 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:40 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (c:/wamp/tmp))
+Apr 25 12:14:53 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:14:53 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:14:53 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 93 (session_start() [<a href='function.session-start'>function.session-start</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:53 symfony [err] {sfError404Exception} Empty module and/or action after parsing the URL "/function.session-start" (/).
+Apr 25 12:14:53 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Apr 25 12:14:53 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:14:53 symfony [info] {sfWebDebugLogger} Configuration 32.96 ms (5)
+Apr 25 12:14:53 symfony [info] {sfWebDebugLogger} Factories 133.24 ms (1)
+Apr 25 12:14:53 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(c:/wamp/tmp\sess_bsq2rltat9gnphl6kntear1ee4, O_RDWR) failed: No such file or directory (2))
+Apr 25 12:14:53 symfony [warning] {sfWebDebugLogger}  Warning at C:\Program Files\EasyPHP5.3.0\www\ocm\lib\vendor\symfony\lib\storage\sfSessionStorage.class.php on line 183 (session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (c:/wamp/tmp))
+Apr 25 12:37:22 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:37:22 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:37:22 symfony [info] {myUser} Automatic user logout due to timeout
+Apr 25 12:37:22 symfony [info] {myUser} User is not authenticated
+Apr 25 12:37:22 symfony [err] {sfError404Exception} Empty module and/or action after parsing the URL "/function.session-start" (/).
+Apr 25 12:37:22 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Apr 25 12:37:22 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:37:22 symfony [info] {sfWebDebugLogger} Configuration 26.48 ms (5)
+Apr 25 12:37:22 symfony [info] {sfWebDebugLogger} Factories 144.67 ms (1)
+Apr 25 12:37:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:37:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:37:24 symfony [err] {sfError404Exception} Empty module and/or action after parsing the URL "/function.session-start" (/).
+Apr 25 12:37:24 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Apr 25 12:37:24 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:37:24 symfony [info] {sfWebDebugLogger} Configuration 31.61 ms (5)
+Apr 25 12:37:24 symfony [info] {sfWebDebugLogger} Factories 153.93 ms (1)
+Apr 25 12:37:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:37:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:37:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 12:37:29 symfony [info] {sfBasicSecurityFilter} Action "welcome/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:37:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 12:37:29 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 12:37:29 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 12:37:29 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 12:37:29 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:37:29 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 12:37:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 25 12:37:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:37:29 symfony [info] {sfWebDebugLogger} Configuration 63.15 ms (12)
+Apr 25 12:37:29 symfony [info] {sfWebDebugLogger} Factories 136.69 ms (1)
+Apr 25 12:37:29 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 25.22 ms (1)
+Apr 25 12:37:29 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 79.51 ms (1)
+Apr 25 12:37:29 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 10.90 ms (1)
+Apr 25 12:37:29 symfony [info] {sfWebResponse} Send content (37976 o)
+Apr 25 12:37:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:37:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:37:36 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 12:37:37 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:37:37 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:37:37 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 12:37:37 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 12:37:37 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 12:37:37 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (john.doe, 1)
+Apr 25 12:37:37 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 12:37:37 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 12:37:37 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:37:37 symfony [info] {sfWebDebugLogger} Configuration 44.80 ms (8)
+Apr 25 12:37:37 symfony [info] {sfWebDebugLogger} Factories 156.18 ms (1)
+Apr 25 12:37:37 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 585.12 ms (1)
+Apr 25 12:37:37 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 12:57:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 12:57:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 12:57:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 12:57:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 12:57:30 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 12:57:30 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 12:57:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 12:57:30 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 12:57:30 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 12:57:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 12:57:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 12:57:30 symfony [info] {sfWebDebugLogger} Configuration 797.11 ms (9)
+Apr 25 12:57:30 symfony [info] {sfWebDebugLogger} Factories 131.38 ms (1)
+Apr 25 12:57:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 13:01:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:01:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:01:00 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 13:01:00 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:01:00 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:01:00 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 13:01:01 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:01:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 13:01:01 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 13:01:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 13:01:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:01:01 symfony [info] {sfWebDebugLogger} Configuration 82.89 ms (8)
+Apr 25 13:01:01 symfony [info] {sfWebDebugLogger} Factories 141.93 ms (1)
+Apr 25 13:01:01 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.00 ms (1)
+Apr 25 13:08:25 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:08:25 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:08:25 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 13:08:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:08:25 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:08:25 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 13:08:25 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:08:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 13:08:25 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[42S02]: Base table or view not found: 1146 La table 'dbs_c318401_credit_manager.sf_guard_user' n'existe pas
+Apr 25 13:08:25 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 13:08:25 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:08:25 symfony [info] {sfWebDebugLogger} Configuration 74.93 ms (8)
+Apr 25 13:08:25 symfony [info] {sfWebDebugLogger} Factories 159.61 ms (1)
+Apr 25 13:08:25 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (1)
+Apr 25 13:10:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:10:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:10:09 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 13:10:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:10:09 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:10:09 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 13:10:10 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:10:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (2)
+Apr 25 13:10:10 symfony [info] {myUser} User is not authenticated
+Apr 25 13:10:10 symfony [err] {sfException} The user does not exist anymore in the database.
+Apr 25 13:10:10 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 13:10:10 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:10:10 symfony [info] {sfWebResponse} Send cookie "sfRemember": ""
+Apr 25 13:10:10 symfony [info] {sfWebDebugLogger} Configuration 118.78 ms (8)
+Apr 25 13:10:10 symfony [info] {sfWebDebugLogger} Factories 248.40 ms (1)
+Apr 25 13:10:10 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:11:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:11:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:11:18 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'welcome',  'action' => 'index',)
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Apr 25 13:11:19 symfony [info] {sfBasicSecurityFilter} Action "welcome/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:11:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:11:19 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:11:19 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:11:19 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:11:19 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:11:19 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:11:19 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 25 13:11:19 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:11:19 symfony [info] {sfWebDebugLogger} Configuration 87.46 ms (12)
+Apr 25 13:11:19 symfony [info] {sfWebDebugLogger} Factories 136.46 ms (1)
+Apr 25 13:11:19 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 25.75 ms (1)
+Apr 25 13:11:19 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 67.09 ms (1)
+Apr 25 13:11:19 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.25 ms (1)
+Apr 25 13:11:19 symfony [info] {sfWebResponse} Send content (39003 o)
+Apr 25 13:11:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:11:30 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:11:30 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:11:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:11:30 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:11:30 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:11:30 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:11:31 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:11:31 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:11:31 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:11:31 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:11:31 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:11:31 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:11:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:11:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} Configuration 56.58 ms (9)
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} Factories 125.59 ms (1)
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 201.67 ms (1)
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 59.70 ms (1)
+Apr 25 13:11:31 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.69 ms (1)
+Apr 25 13:11:31 symfony [info] {sfWebResponse} Send content (42186 o)
+Apr 25 13:12:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:12:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:12:15 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:12:15 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:12:15 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:12:15 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:12:15 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:12:15 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:12:15 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:12:15 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:12:15 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:12:15 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:15 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:15 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:12:15 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} Configuration 53.63 ms (9)
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} Factories 116.70 ms (1)
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 183.56 ms (1)
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 52.18 ms (1)
+Apr 25 13:12:15 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.11 ms (1)
+Apr 25 13:12:15 symfony [info] {sfWebResponse} Send content (42190 o)
+Apr 25 13:12:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:12:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:12:24 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:12:24 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:12:24 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:12:24 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:12:24 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:12:24 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:12:24 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:12:24 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:24 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:24 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:12:24 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:12:24 symfony [info] {sfWebDebugLogger} Configuration 57.95 ms (9)
+Apr 25 13:12:24 symfony [info] {sfWebDebugLogger} Factories 132.01 ms (1)
+Apr 25 13:12:24 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 27.17 ms (1)
+Apr 25 13:12:24 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 60.11 ms (1)
+Apr 25 13:12:24 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.35 ms (1)
+Apr 25 13:12:24 symfony [info] {sfWebResponse} Send content (38099 o)
+Apr 25 13:12:35 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:12:35 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:12:35 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:12:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:12:35 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:12:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:12:35 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:12:35 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:12:35 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:12:35 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:12:35 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:12:35 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:35 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:12:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:12:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} Configuration 59.86 ms (9)
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} Factories 119.36 ms (1)
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 188.26 ms (1)
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 90.44 ms (1)
+Apr 25 13:12:35 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 8.88 ms (1)
+Apr 25 13:12:35 symfony [info] {sfWebResponse} Send content (42191 o)
+Apr 25 13:14:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:14:36 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:14:36 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:14:36 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:14:36 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:14:36 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:14:36 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:14:36 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:14:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:14:36 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:14:36 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:14:36 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:14:36 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:14:36 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:14:36 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} Configuration 63.15 ms (9)
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} Factories 139.51 ms (1)
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 210.59 ms (1)
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 72.65 ms (1)
+Apr 25 13:14:36 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 15.64 ms (1)
+Apr 25 13:14:36 symfony [info] {sfWebResponse} Send content (42375 o)
+Apr 25 13:16:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:16:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:16:20 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:16:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:16:20 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:16:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:16:20 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:16:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:16:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:16:21 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:16:21 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:16:21 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:16:21 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:16:21 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:16:21 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} Configuration 55.12 ms (9)
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} Factories 142.03 ms (1)
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 202.68 ms (1)
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 70.38 ms (1)
+Apr 25 13:16:21 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 10.98 ms (1)
+Apr 25 13:16:21 symfony [info] {sfWebResponse} Send content (42204 o)
+Apr 25 13:16:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:16:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:16:41 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:16:41 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:16:41 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:16:41 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:16:41 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:16:41 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:16:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (talla, 1)
+Apr 25 13:16:41 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:16:41 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:16:41 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:16:41 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:16:41 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:16:41 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} Configuration 49.94 ms (9)
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} Factories 121.98 ms (1)
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 168.64 ms (1)
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 60.94 ms (1)
+Apr 25 13:16:41 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 8.48 ms (1)
+Apr 25 13:16:41 symfony [info] {sfWebResponse} Send content (42203 o)
+Apr 25 13:18:11 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:18:11 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:18:11 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:18:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:18:11 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:18:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:18:11 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:18:11 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 25 13:18:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (john.doe, 1)
+Apr 25 13:18:11 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 25 13:18:11 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 25 13:18:11 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:18:11 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 25 13:18:11 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 25 13:18:11 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} Configuration 37.39 ms (9)
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} Factories 112.00 ms (1)
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 164.54 ms (1)
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 48.28 ms (1)
+Apr 25 13:18:11 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 7.31 ms (1)
+Apr 25 13:18:11 symfony [info] {sfWebResponse} Send content (42211 o)
+Apr 25 13:23:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 25 13:23:04 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 25 13:23:04 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 25 13:23:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 25 13:23:04 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 25 13:23:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 25 13:23:04 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 25 13:23:05 symfony [err] {Doctrine_Connection_Exception} Couldn't locate driver named mysql
+Apr 25 13:23:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Apr 25 13:23:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 25 13:23:06 symfony [info] {sfWebDebugLogger} Configuration 1847.47 ms (10)
+Apr 25 13:23:06 symfony [info] {sfWebDebugLogger} Factories 130.65 ms (1)
+Apr 25 13:23:06 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1191.58 ms (1)
+Apr 27 01:46:21 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 27 01:46:21 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 27 01:46:21 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 27 01:46:21 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 27 01:46:21 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 27 01:46:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 27 01:46:21 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 27 01:46:21 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 27 01:46:21 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 27 01:46:21 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 27 01:46:22 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 27 01:46:22 symfony [info] {sfWebResponse} Send status "HTTP/1.1 401 Unauthorized"
+Apr 27 01:46:22 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 27 01:46:22 symfony [info] {sfWebDebugLogger} Configuration 999.19 ms (9)
+Apr 27 01:46:22 symfony [info] {sfWebDebugLogger} Factories 490.22 ms (1)
+Apr 27 01:46:22 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 18.51 ms (1)
+Apr 27 01:46:22 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 85.45 ms (1)
+Apr 27 01:46:22 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 7.45 ms (1)
+Apr 27 01:46:22 symfony [info] {sfWebResponse} Send content (36024 o)
+Apr 27 01:46:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 27 01:46:29 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 27 01:46:29 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 27 01:46:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 27 01:46:29 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 27 01:46:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 27 01:46:29 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 27 01:46:29 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 27 01:46:29 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (admin, 1)
+Apr 27 01:46:29 symfony [info] {sfPHPView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Apr 27 01:46:29 symfony [info] {sfPartialView} Render "C:/Program Files/EasyPHP5.3.0/www/ocm/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Apr 27 01:46:29 symfony [info] {sfPHPView} Decorate content with "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 27 01:46:29 symfony [info] {sfPHPView} Render "C:\Program Files\EasyPHP5.3.0\www\ocm\apps\frontend\templates/layout.php"
+Apr 27 01:46:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 27 01:46:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} Configuration 66.42 ms (9)
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} Factories 143.82 ms (1)
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 192.80 ms (1)
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 34.38 ms (1)
+Apr 27 01:46:29 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 5.46 ms (1)
+Apr 27 01:46:29 symfony [info] {sfWebResponse} Send content (41005 o)
+Apr 27 01:48:49 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Apr 27 01:48:49 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Apr 27 01:48:49 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/login) for /login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Apr 27 01:48:49 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 27 01:48:49 symfony [info] {sfFilterChain} Executing filter "sfGuardRememberMeFilter"
+Apr 27 01:48:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 27 01:48:49 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (admin, 1)
+Apr 27 01:48:49 symfony [info] {myUser} User is authenticated
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.permission_id AS s2__permission_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_permission s LEFT JOIN sf_guard_user_permission s2 ON s.id = s2.permission_id WHERE (s2.user_id IN (?)) - (1)
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.group_id AS s2__group_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_group s LEFT JOIN sf_guard_user_group s2 ON s.id = s2.group_id WHERE (s2.user_id IN (?)) - (1)
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.group_id AS s2__group_id, s2.permission_id AS s2__permission_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_permission s LEFT JOIN sf_guard_group_permission s2 ON s.id = s2.permission_id WHERE (s2.group_id IN (?)) - (1)
+Apr 27 01:48:49 symfony [info] {myUser} Add credential(s) "administrateur"
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE sf_guard_user SET last_login = ?, updated_at = ? WHERE id = ? - (2012-04-27 01:48:49, 2012-04-27 01:48:49, 1)
+Apr 27 01:48:49 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) - (1)
+Apr 27 01:48:50 symfony [info] {sfFrontWebController} Redirect to "http://127.0.0.1/ocm/web/index.php/"
+Apr 27 01:48:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Apr 27 01:48:50 symfony [info] {sfWebResponse} Send header "Location: http://127.0.0.1/ocm/web/index.php/"
+Apr 27 01:48:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 27 01:48:50 symfony [info] {sfWebDebugLogger} Configuration 840.72 ms (9)
+Apr 27 01:48:50 symfony [info] {sfWebDebugLogger} Factories 130.87 ms (1)
+Apr 27 01:48:50 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 335.61 ms (1)
+Apr 27 01:48:50 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (7)
+Apr 27 01:48:50 symfony [info] {sfWebResponse} Send content (106 o)

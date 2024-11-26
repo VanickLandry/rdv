@@ -1,0 +1,6 @@
+# config:
+      # actions: ~
+      # fields:
+        # temperature: { label: Température }
+        # CanardCategorie: { label: Les canards }
+        # new_CanardCategorie:  { label: Nouveau Canard }

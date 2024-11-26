@@ -1,0 +1,17 @@
+symfony_Version.1.4.10.20110321.curr-now-used
+
+symfony-install-guide
+
+D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor
+
+chemin d'installation:
+
+\online_credit_mng\lib\vendor\symfony\test
+\online_credit_mng\lib\vendor\symfony\lib
+\online_credit_mng\lib\vendor\symfony\data
+\online_credit_mng\lib\vendor\symfony\licenses
+\online_credit_mng\lib\vendor\symfony\package.xml.tmpl
+\online_credit_mng\lib\vendor\symfony\COPYRIGHT
+\online_credit_mng\lib\vendor\symfony\LICENSE
+\online_credit_mng\lib\vendor\symfony\README
+\online_credit_mng\lib\vendor\symfony\CHANGELOG

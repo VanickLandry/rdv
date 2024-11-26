@@ -1,0 +1,74 @@
+# <?******************************* fixtures_dev-data_parameter-institution-agency *******************************
+
+
+# ******************************* institutions *******************************
+#REGION CrdmgrInstitution
+CrdmgrInstitution:
+  Institution_uce:
+    is_active: 1
+    code_institution: ASS001
+    nom_institution: uce
+    adresse: Bonanjo Douala
+    lieu_siege_social_code: ville_douala
+    # -- config params par defaut pour consentement
+    # -- config params par defaut pour bulletin d'adhesion
+    telephone: 33432131
+    tva: 19.25	
+    type_devise_code: type_devise_xaf
+    regime_fiscal: REEL
+    # -- mandatory
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+
+
+# ******************************* agences *******************************
+#REGION CrdmgrAgency
+CrdmgrAgency :
+  # SAAR-VIE
+  Agence_uce_directiongenerale:
+    is_active: 1
+    code_agence: ASS001001
+    nom_agence: uce Direction Generale Douala
+    adresse: Bonanjo Douala
+    lieu_localisation_code: ville_douala
+    CtrInstitution: Institution_uce
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Agence_uce_directioncommerciale:
+    is_active: 1
+    code_agence: ASS001002
+    nom_agence: uce Direction Commercial Douala
+    adresse: Bonapriso Douala
+    lieu_localisation_code: ville_douala
+    CtrInstitution: Institution_uce
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Agence_uce_akwa:
+    is_active: 1
+    code_agence: ASS001003
+    nom_agence: uce Akwa
+    adresse: Akwa Douala
+    lieu_localisation_code: ville_douala
+    CtrInstitution: Institution_uce
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Agence_uce_deido:
+    is_active: 1
+    code_agence: ASS001004
+    nom_agence: uce Deido
+    adresse: Deido Douala
+    lieu_localisation_code: ville_douala
+    CtrInstitution: Institution_uce
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  Agence_uce_bali:
+    is_active: 1
+    code_agence: ASS001005
+    nom_agence: uce Bali
+    adresse: Bali Douala
+    lieu_localisation_code: ville_douala
+    CtrInstitution: Institution_uce
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]	
+
+  # ECOBANK

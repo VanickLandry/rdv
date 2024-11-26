@@ -1,0 +1,120 @@
+RdMirroir:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        largeur: { type: decimal, notnull: true}
+        hauteur: { type: decimal, notnull: true}
+        nombre_id: { type: integer, notnull: true}
+    relations:
+        fk_detail:  {class: RdDetailMirroir, local: nombre_id, foreign: id,type: many  }
+RdDetailMirroir:
+    actAs: { Timestampable: ~ }
+    columns:
+        mirroir_id: { type: integer, notnull: true}
+        largeur_min: { type: decimal, notnull: true,default: 1}
+        hauteur_min: { type: decimal, notnull: true,default: 1}
+        rais_bas: { type: decimal, notnull: true}
+        rais_haut: { type: decimal, notnull: true}
+        dormant: { type: decimal, notnull: true}
+        hauteur_couvre_joint: { type: decimal, notnull: true}
+        largeur_couvre_joint: { type: decimal, notnull: true}
+        sernie: { type: decimal, notnull: true}
+        chicone: { type: decimal, notnull: true}
+        traverse: { type: decimal, notnull: true}
+        largeur_vitre: { type: decimal, notnull: true,default:0}
+        hauteur_vitre: { type: decimal, notnull: true,default:0}
+        hauteur_dormant: { type: decimal, notnull: true,default:0}
+        largeur_dormant: { type: decimal, notnull: true,default:0}
+        hauteur_parclose30: { type: decimal, notnull: true,default:0}
+        largeur_parclose30: { type: decimal, notnull: true,default:0}
+        hauteur_zporte: { type: decimal, notnull: true,default:0}
+        largeur_zporte: { type: decimal, notnull: true,default:0}
+        traverse140: { type: decimal, notnull: true,default:0}
+        hauteur_cadre: { type: decimal, notnull: true,default:0}
+        largeur_cadre: { type: decimal, notnull: true,default:0}
+        ljb: { type: decimal, notnull: true}
+        hjb: { type: decimal, notnull: true}
+        quantite: { type: decimal, notnull: true,default:0}
+    relations:
+        fk_detailmirroir:  {class: RdMirroir, local: mirroir_id, foreign: id  }
+RdFacture:
+    actAs: { Timestampable: ~ }
+    columns:
+        detailmirroir_id: { type: integer, notnull: false}
+    relations:
+        fk_facture:  {class: RdDetailMirroir, local: detailmirroir_id, foreign: id }
+CrdmgrParameter:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        type_parametre: { type: string(100), notnull: true}
+        code_parametre: { type: string(100), notnull: true, unique: true}
+        label_param: { type: string(150), notnull: true}
+        valeur_string: { type: decimal, notnull: true }
+        valeur_numeric: { type: decimal, notnull: true, default: 0 } 
+        description_param: { type: string(150), notnull: true}
+        created_by: { type: integer, notnull: true }
+        updated_by: { type: integer, notnull: true }
+    relations:
+        CtrCreatedBy:  {class: sfGuardUser, local: created_by , foreign: id  }
+        CtrUpdatedBy:  {class: sfGuardUser, local: updated_by , foreign: id  }
+GlassPrice:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        label: { type: string(100), notnull: true }
+        type: { type: string(100), notnull: true }
+        price: { type: decimal, notnull: false }     
+        created_by: { type: integer, notnull: false }
+        updated_by: { type: integer, notnull: false }
+    relations:
+        CtrCreatedBy:  {class: sfGuardUser, local: created_by , foreign: id  }
+        CtrUpdatedBy:  {class: sfGuardUser, local: updated_by , foreign: id  }
+Estimation:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        length: { type: decimal, notnull: true }
+        width: { type: decimal, notnull: false }     
+        percent: { type: decimal, notnull: false }     
+        price: { type: decimal, notnull: false }     
+        glassprice_id: { type: integer, notnull: false }
+        created_by: { type: integer, notnull: false }
+        updated_by: { type: integer, notnull: false }
+    relations:
+        glasspriceestimation:  {class: GlassPrice, local: glassprice_id , foreign: id  }
+        CtrCreatedBy:  {class: sfGuardUser, local: created_by , foreign: id  }
+        CtrUpdatedBy:  {class: sfGuardUser, local: updated_by , foreign: id  }
+Estim:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        largeur: { type: decimal, notnull: true}
+        hauteur: { type: decimal, notnull: true}
+        nombre_id: { type: integer, notnull: false}
+    relations:
+        fk_detail:  {class: Estimation, local: nombre_id, foreign: id,type: many  }
+Devis:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        largeur: { type: decimal, notnull: true}
+        hauteur: { type: decimal, notnull: true}
+        type: { type: decimal, notnull: true}
+        prix: { type: decimal, notnull: true}
+        codetype: { type: integer, notnull: false}
+    relations:
+        fk_detail:  {class: Estimation, local: nombre_id, foreign: id,type: many  }
+Client:
+    actAs: { Timestampable: ~ }
+    columns:
+        is_active: { type: boolean, notnull: true, default: 1 }
+        nom: { type: string(255), notnull: true}
+        numtel: { type: string(15), notnull: true}
+        description: { type: string(1000), notnull: true}
+        percent: { type: decimal, notnull: true}
+        # type: { type: decimal, notnull: true}
+        # prix: { type: decimal, notnull: true}
+        # codetype: { type: integer, notnull: false}
+    relations:
+        fk_detail:  {class: Estimation, local: nombre_id, foreign: id,type: many  }

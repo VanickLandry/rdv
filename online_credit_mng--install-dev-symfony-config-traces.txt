@@ -1,0 +1,1303 @@
+-- online_credit_mng--install-dev-symfony-config-traces
+
+-- TIPS: .ixwebhosting
+    -- help
+        php symfony help doctrine:build
+    -- forum utile
+        -- site officiel
+        http://www.symfony-project.org/
+        -- forum officiel
+        http://forum.symfony-project.org/
+        -- Développez sous Symfony Framework PHP
+        http://www.symfolive.com/ 
+        http://www.symfolive.com/developpez-com-parle-du-framework-symfony/
+
+    -- debug php
+        echo "<pre> #REGION DEBUG RESULT";
+        var_dump ($request->getParameter('action'));
+        // var_dump ($request->getPostParameter());
+        var_dump ( get_object_vars ($request)) ;
+        var_dump ( get_class_methods ('sfWebRequest')) ;
+
+		// $form->getObject()->setXxxx(yyy); 
+		$form->getObject()->setCreatedBy(1111);
+
+		var_dump ($form->getName() );
+		var_dump ($form->getValue('type_parametre') );
+		var_dump ($form->getValue('description_param') );
+		var_dump ($form->getObject()->getCreatedBy() );
+
+        $parameters = $request->getParameterHolder()->getAll();
+        foreach ($parameters as $key => $value)
+        {
+          echo "\n ".$key;
+          /*
+          if (in_array($key, $names))
+          {
+            $array[$key] = $value;
+          }
+          */
+        }
+        echo "</pre> #END_REGION DEBUG RESULT";
+        exit;
+
+    -- chemin important:
+        C:\Program Files\EasyPHP-5.3.3\www\
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web
+        -- connexion
+        username:       admin
+        password:       admin
+        -- url
+        http://localhost:2000/online_credit_mng/
+        http://localhost:2000/online_credit_mng/index.php/
+        http://localhost:2000/online_credit_mng/frontend_dev.php/
+        http://localhost:2000/online_credit_mng/backend_dev.php/
+        http://localhost:2000/online_credit_mng/backend_dev.php/sfGuardUser
+        http://localhost:2000/online_credit_mng/backend.php/sfGuardUser
+        --
+        C:\programs\server2go_a22_psm\server2go\server\php\ext\
+        -- liens admin:
+        http://localhost:2000/online_credit_mng/backend.php/sfGuardUser
+        http://localhost:2000/online_credit_mng/backend.php/sfGuardGroup
+        http://localhost:2000/online_credit_mng/backend.php/sfGuardPermission
+        -- jebeet files:
+        http://www.symfony-project.org/get/jobeet/images.zip
+        http://www.symfony-project.org/get/jobeet/css.zip
+        http://www.symfony-project.org/get/jobeet/favicon.ico
+
+
+    -- log manager
+        -- http://www.librosweb.es/symfony_1_2_en/capitulo16/logging.html
+        -- For both better performance and security, you probably want to store symfony logs in several small files instead of one single large file. The ideal storage strategy for log files is to back up and empty the main log file regularly, but to keep only a limited number of backups. You can enable such a log rotation with a period of 7 days and a history (number of backups) of 10, as shown in Listing 16-7. You would work with one active log file plus ten backup files containing seven days' worth of history each. Whenever the next period of seven days ends, the current active log file goes into backup, and the oldest backup is erased.
+
+        -- Listing 16-7 - Launching Log Rotation
+        symfony log:rotate backend prod --period=1 --history=10  
+        symfony log:rotate backend dev --period=1 --history=10
+
+        symfony log:rotate frontend prod --period=1 --history=10  
+        symfony log:rotate frontend dev --period=1 --history=10  
+
+    -- symfony tasks utiles
+        -- clear cache et forçage de rebuild
+        php symfony cc
+        php symfony doctrine:build --all-classes        
+        -- filtre de formulaire
+        symfony doctrine:build --filters        
+        -- generer les applications de nom "frontend", et "backend"
+        symfony generate:app frontend
+        symfony generate:app backend
+        -- creer un module dans un projet
+        symfony generate:module applicationName moduleName
+        php symfony doctrine:generate-module --with-show --non-verbose-templates applicationName moduleName modelName
+        -- les modele se trouvent dans le fichier config/doctrine/schema.yml
+        php symfony generate:module backend welcome        
+        php symfony doctrine:generate-module --with-show --non-verbose-templates frontend job JobeetJob
+        Enable one or more modules in your /config/settings.yml
+        secure one or more modules in your /config/security.yml
+        -- Most of the time, a form has to be serialized to the database. As symfony already knows everything about your database model, it can automatically generate forms based on this information. In fact, when you launched the doctrine:build --all task during day 3, symfony automatically called the doctrine:build --forms task:
+        -- The doctrine:build --forms task generates form classes in the lib/form/ directory. The organization of these generated files is similar to that of lib/model/. Each model class has a related form class (for instance JobeetJob has JobeetJobForm),
+        php symfony doctrine:build --forms
+        -- configurer l'accès a la bd   
+        symfony configure:database "mysql:host=localhost;dbname=dbs_online_credit_mng" dba_onlncrd_mng pwd_4_crd_mng_dba
+        -- help asking
+        php symfony help doctrine:build
+        -- regenerer le projet: Rebuild your model
+        symfony doctrine:build-model
+        symfony doctrine:build-sql 
+        symfony cc
+        symfony doctrine:build --all-classes
+        symfony doctrine:insert-sql 
+        -- do everything with one command
+        symfony doctrine-build-all-reload frontend
+        symfony doctrine:build --all --no-confirmation
+            -- ie
+               ./symfony doctrine:drop-db
+               ./symfony doctrine:build-db
+               ./symfony doctrine:build-model
+               ./symfony doctrine:build-forms
+               ./symfony doctrine:build-filters
+               ./symfony doctrine:build-sql
+               ./symfony doctrine:insert-sql
+        -- charger les données initiales (fixtures)
+        symfony help doctrine:data-load
+        cp plugins/sfDoctrineGuardPlugin/data/fixtures/fixtures.yml.sample data/fixtures/sfGuard.yml        
+        -- (delete de toutes les tables puis load des fixtures)
+        symfony doctrine:data-load
+        symfony doctrine:build --all --and-load --no-confirmation
+        -- The doctrine:build --all --and-load task is a shortcut for the doctrine:build --all task followed by the doctrine:data-load task.    
+            -- Run the doctrine:build --all --and-load task to make sure everything is generated from your schema. This will generate your forms, filters, models, drop your database and re-create it with all the tables.
+            php symfony doctrine:build --all --and-load
+        -- admin generator
+        symfony help doctrine:generate-admin
+        symfony doctrine:generate-admin backend JobeetJob --module=job
+        symfony doctrine:generate-admin backend JobeetCategory --module=category
+        -- installer un plugin dispo dans le repertoire racine de la solution
+        php symfony plugin:install sfDoctrineGuardPlugin-5.0.0.tgz
+        -- Publier les elements web pour les plugins installé :: For now, assets (webdesign: images, js, css, etc.) from the sfDoctrinePlugin are not located under the web/ folder. We need to publish them under the web/ folder thanks to the plugin:publish-assets task:
+        symfony cc
+        symfony plugin:publish-assets
+
+        -- Génération automatique de l'administration dans Symfony
+        symfony doctrine:generate-admin APPLICATION MODELE
+        eg:
+            symfony doctrine:generate-admin backend Bureaux
+            symfony doctrine:generate-admin backend Commentaires
+            symfony doctrine:generate-admin backend Membres
+            symfony doctrine:generate-admin backend Photos
+
+    -- usefull helper
+        include_stylesheets() :: generates <link> tags for stylesheets
+        <?php use_stylesheet('main.css') ?> :: helper to include a stylesheet from a template
+        <?php use_javascript('menu.js'); ?>
+        -- obtenir une url à partir d'une entrée du fichier routing.yml
+        <?php echo url_for('@homepage') ?>
+        <?php echo url_for('job/show?id='.$job->getId()) ?>
+        <?php echo url_for('job/index') ?>
+        <?php echo image_tag('/images/jobeet-mini.png') ?>
+        <?php echo image_tag('/images/symfony.gif', 'alt=symfony framework') ?>
+        <?php echo image_tag('/my_images/test.gif', 'size=100x20 alt=My new car class=shortImage onclick=showNextImage(); ') ?>
+        <?php echo link_to(image_tag('read.gif'), 'article/read?title=Finance_in_France') ?>        
+        -- The form_tag_for() helper generates a <form> tag for the given form and route and changes the HTTP methods to POST or PUT depending on whether the object is new or not. It also takes care of the ~multipart|Forms (Multipart)~ attribute if the form has any file input tags.
+        <?php echo form_tag_for($form, '@job') ?>
+        -- Eventually, the <?php echo $form ?> renders the form widgets.
+        <?php echo $form ?>
+        <?php echo $job->getDateTimeObject('created_at')->format('m/d/Y') ?>
+
+    -- use sfWidgetFormChoice for the type widget:
+        $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
+        'choices'  => Doctrine_Core::getTable('JobeetJob')->getTypes(),
+        'expanded' => true,
+        ));
+        sfWidgetFormChoice represents a choice widget which can be rendered by a d
+        widget according to some configuration options (expanded and multiple):
+        • Dropdown list (<select>): array('multiple' => false, 'expanded'
+        false)
+        • Dropdown box (<select multiple="multiple">): array('multiple'
+        true, 'expanded' => false)
+        • List of radio buttons: array('multiple' => false, 'expanded' => true)
+        • List of checkboxes: array('multiple' => true, 'expanded' => true)
+
+     -- Force validator error messages in action.class.php like form: like validator message as previous set_Error ('msg', 'fldname')
+    $this->form->getErrorSchema()->addError(new sfValidatorError(new sfValidatorSchema(), 'your_message'), 'your_field_name'); 
+
+    -- activer une module pour dans une application
+        modifier le fichier /config/setting.yml
+
+    -- supprimer/ajouter des filtres en modifiant le fichier:
+        -- D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\plugins\sfDoctrineGuardPlugin\modules\sfGuardUser\config\generator.yml      
+        filter:
+            # class: false
+            display: [username, first_name, last_name, is_super_admin]
+        -- rem:
+            Les classes de filtre de formulaire sont situées sous le répertoire lib/filter/ et chaque classe du modèle est associée à une classe de filtre de formulaire (JobeetJobFormFilter pour JobeetJobForm).
+
+        -- >> tokens    /var/www/sfproject/lib/vendor/symfony/lib/filter/doctrine/sfDoctrineGuardPlugin/sfGuardUserFormFilter.class.php
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\filter\doctrine\sfDoctrineGuardPlugin
+
+    -- Partial
+        When you need to reuse some portion of a template, you need to create a partial. A partial is a snippet of template code that can be shared among several templates. A partial is just another template that
+        starts with an underscore (_). Create the _list.php FILE eg: 
+        <?php include_partial('job/list', array('jobs' => $jobs)) ?>
+
+    -- admin generator
+        php symfony help doctrine:generate-admin
+        $ php symfony doctrine:generate-admin backend JobeetJob --module=job
+        $ php symfony doctrine:generate-admin backend JobeetCategory --module=category
+        For the frontend application, the doctrine:generate-module task has been used TO bootstrap a basic CRUD module based on a model class. For the backend, the doctrine:generate-admin task will be used as it generates a full working backend interface for a model class:
+        These two commands create a job and a category module for the JobeetJob and the
+        JobeetCategory model classes respectively.
+        The optional --module option overrides the module name generated by default by the task
+        (which would have been otherwise jobeet_job for the JobeetJob class)
+
+    -- Redefine the default homepage
+        For now, if you request the home page of the new website, it shows a 'Congratulations' page. A better idea would be to show the list of questions (referenced in these documents as question/list and translated as: the list action of the question module). To do this, open the routing configuration file of the frontend application, found in askeet/apps/frontend/config/routing.yml and locate the homepage: section. Change it to:
+            homepage:
+              url:   /
+              #param: { module: moduleName, action: actionName }
+              param: { module: welcome, action: index }
+
+            A module can be created using the following command:
+            php symfony generate:module applicationName moduleName
+            In actions/actions.class.php, edit the executeIndex() method and remove the final forward        
+               // -- $this->forward('default', 'module');
+
+    -- FAQ and bug fixes:
+        --
+            <link href="<?php echo url_for('@homepage', true) ?>"/>
+            <updated><?php echo gmstrftime('%Y-%m-%dT%H:%M:%SZ',
+            Doctrine_Core::getTable('JobeetJob')->getLatestPost()->getDateTimeObject('created_at')->Listing          ?>
+            --
+            $this->job = Doctrine::getTable('JobeetJob')->find($request->getParameter('id'));
+            <div class="meta">
+            --
+            <small>posted on <?php echo
+            $job->getDateTimeObject('created_at')->format('m/d/Y') ?></small>
+            </div>
+
+            public function findByName($name)
+            {
+            return Doctrine_Query::create()
+            ->from('User u')
+            ->where('u.name LIKE ?', "%$name%")
+            ->execute();
+            }
+
+            public function executeIndex(sfWebRequest $request)
+            {
+                $q = Doctrine_Query::create()
+                ->from('JobeetJob j')
+                ->where('j.expires_at > ?', date('Y-m-d H:i:s', time()));
+                $this->jobeet_jobs = $q->execute();
+            }
+
+            public function save(Doctrine_Connection $conn = null)
+            {
+                if ($this->isNew() && !$this->getExpiresAt())
+                {
+                    $now = $this->getCreatedAt() ?
+                    $this->getDateTimeObject('created_at')->format('U') : time();
+                    $this->setExpiresAt(date('Y-m-d H:i:s', $now + 86400 *
+                    sfConfig::get('app_active_days')));
+                }
+                return parent::save($conn);
+            }
+            // lib/model/doctrine/JobeetCategoryTable.class.php
+            class JobeetCategoryTable extends Doctrine_Table
+            {
+                public function getWithJobs()
+                {
+                    $q = $this->createQuery('c')
+                    ->leftJoin('c.JobeetJobs j')
+                    ->where('j.expires_at > ?', date('Y-m-d H:i:s', time()));
+                    return $q->execute();
+                }
+            }
+            // apps/frontend/modules/job/actions/actions.class.php
+            public function executeIndex(sfWebRequest $request)
+            {
+                $this->categories =
+                Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
+            }
+                // apps/frontend/modules/job/templates/indexSuccess.php
+                <?php use_stylesheet('jobs.css') ?>
+                <div id="jobs">
+                <?php foreach ($categories as $category): ?>
+                <div class="category_<?php echo Jobeet::slugify($category->getName(
+                ?>">
+                <div class="category">
+                <div class="feed">
+                <a href="">Feed</a>
+                </div>
+                <h1><?php echo $category ?></h1>
+                </div>
+                <table class="jobs">
+                <?php foreach ($category->getActiveJobs() as $i => $job): ?>
+                <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
+                <td class="location">
+                <?php echo $job->getLocation() ?>
+                </td>
+                <td class="position">
+                <?php echo link_to($job->getPosition(), 'job_show_user', $job) ?>
+                </td>
+                <td class="company">
+                <?php echo $job->getCompany() ?>
+                </td>
+                </tr>
+                <?php endforeach; ?>
+                </table>
+                </div>
+                <?php endforeach; ?>
+                </div>
+        -- Catchable fatal error: Argument 1 passed to url_for_form() must be an instance of sfFormObject, instance of ProfileForm given, called in DOCUMENT_ROOT/library/symfony/lib/helper/UrlHelper.php on line 196 and defined in DOCUMENT_ROOT/library/symfony/lib/helper/UrlHelper.php on line 180
+            <?php // include_partial('form', array('form' => $form, 'someparam' => $someparam)) ?>
+            <?php // echo form_tag_for($form, '@password') ?>
+            <?php
+            /*
+            <form action="<?php echo url_for('layouts/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
+            */
+            ?>
+
+
+
+
+-- Tester la configuration des pre-requis WAMP (surtout Php)    
+    telecharger
+    http://sf-to.org/1.4/check.php
+    puis
+    D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\check_configuration.php
+
+    initialiser l'environnement MS-DOS:
+        -- tarlab_set_php_env_var-sf_online_credit_mng-server2go.bat
+            echo off
+            cls
+            SET Path=%Path%;C:\programs\server2go_a22_psm\server2go\server\php
+            set PHP_COMMAND="C:\programs\server2go_a22_psm\server2go\server\php\php.exe"
+            cd /d "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng"
+            rem echo %PHP_COMMAND% 
+
+        -- tarlab_set_php_env_var-sf_online_credit_mng-EasyPHP5.3.3.bat
+            echo off
+            cls
+            SET Path=%Path%;C:\Program Files\EasyPHP-5.3.3\php
+            set PHP_COMMAND="C:\Program Files\EasyPHP-5.3.3\php\php.exe"
+            cd /d "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng"
+            rem echo %PHP_COMMAND% 
+
+    -- tester en ligne de commande MS-DOS:
+    php check_configuration.php
+    -- tester dans le navigateur web ( necessite un redemarrage de apache pour prise en compte de nouveau parametre ini):
+    http://localhost:2000/online_credit_manager_saar_vie/check_configuration.php
+
+    -- au besoin apporter les modif suivantes au fichier php.ini
+        C:\programs\server2go_a22_psm\server2go\server\php\php.ini
+        -- ini en ligne de commande ms-dos
+        C:\Program Files\EasyPHP-5.3.3\php\php.ini
+        -- ini dans apache ( necessite un redemarrage de apache pour prise en compte de nouveau parametre ini)
+        C:\Program Files\EasyPHP-5.3.3\apache\php.ini
+
+        ;include_path = ".:/php/includes"
+        ;(facultatif) include_path = ".;D:\achilleromuald\projects\TARLAB\TARLAB_FRMK\PEAR\httpdocs_pearcore_php5_x\PEAR"
+        ; --
+        ; Directory in which the loadable extensions (modules) reside.
+        ; extension_dir = "./"
+        ; extension_dir = "C:\programs\server2go_a22_psm\server2go\server\php\ext\"
+        extension_dir = "C:\Program Files\EasyPHP-5.3.3\php\ext\"
+        ; --
+        extension=php_mbstring.dll
+        extension=php_mysql.dll
+        ;(facultatif) extension=php_pdo.dll
+        extension=php_pdo_mysql.dll
+        extension=php_pdo_odbc.dll
+        extension=php_xsl.dll
+        ; -- A PHP accelerator
+        extension=php_apc.dll
+
+
+
+-- Symfony Installation 
+    -- D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng
+    -- D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony
+    c:\> mkdir D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony
+    c:\> cd D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony
+    $ mkdir -p lib/vendor
+    $ cd lib/vendor
+    $ tar zxpf symfony-1.4.6.tgz
+    $ mv symfony-1.4.6 symfony
+    $ rm symfony-1.4.6.tgz
+    c:\dev\sfprojects\credit_mng\lib\vendor\symfony.
+    c:\> cd ..\..
+    -- verifier l'installation ( si aucune message de warning alors l'install est ok)
+    c:\> php lib\vendor\symfony\data\bin\symfony -V
+    -- Voir la liste de toutes les tasks/parametres lignes de commandes dispo:
+    c:\> php lib\vendor\symfony\data\bin\symfony
+
+-- Project Setup
+    --  Creer le projet "credit_mng" : run the symfony generate:project task to actually create the symfony project avec comme ORM Doctrine
+    php lib\vendor\symfony\data\bin\symfony generate:project credit_mng --orm=Doctrine
+    -- Directory Description
+        apps/ Hosts all project applications
+        cache/ The files cached by the framework
+        config/ The project configuration files
+        lib/ The project libraries and classes
+        log/ The framework log files
+        plugins/ The installed plugins
+        test/ The unit and functional test files
+        web/ The web root directory (see below)
+    -- The generate:project task has also created a symfony shortcut in the project root directory to shorten the number of characters you have to write when running a task.
+
+    -- Because the symfony shortcut file is executable, on windows you can copy the ‘symfony.bat’ file to your project and use ‘symfony’ instead of ‘php symfony’:
+    copy lib\vendor\symfony\data\bin\symfony.bat
+
+    -- [WARNING: mini-bug rencontré souvent] au besoin (si l'appel 'symfony.bat' ou 'symfony' ne marche pas correctement) corriger le fichier "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\symfony.bat"
+    en ajoutant un rem de manière à commenter la ligne à pb ci-dessous:
+    rem if "%PHP_COMMAND%" == "" goto no_phpcommand
+    --
+    symfony
+
+
+
+-- Configuring the Database
+    When creating a new project, Doctrine is enabled by default. Configuring the database used by Doctrine is as simple as using the configure:database task:
+    
+    -- configurer l'accès a la bd
+    $ php symfony configure:database "mysql:host=localhost;dbname=dbs_online_credit_mng" dba_onlncrd_mng pwd_4_crd_mng_dba
+    
+
+    The configure:database task takes three arguments: the PDO DSN10
+    , the username, and
+    the password to access the database. If you don’t need a password to access your database on the development server, just omit the third argument.
+    If you want to use Propel instead of Doctrine, add --orm=Propel when creating the project with the generate:project task. And if you don’t want to use an ORM, just pass  --orm=none.
+
+
+
+
+-- Application Creation
+    -- generer l'application de frontend
+    php symfony generate:app frontend
+
+    -- Directory Description
+        config/ The application configuration files
+        lib/ The application libraries and classes
+        modules/ The application code (MVC)
+        templates/ The global template files
+
+    -- Securité par defaut
+        By default, the generate:app task has secured our application from the two most
+        widespread vulnerabilities found on the web. That’s right, symfony automatically takes
+        security measures on our behalf.
+        To prevent XSS attacks, output escaping has been enabled; and to prevent CSRF attacks, a
+        random CSRF secret has been generated.
+        Of course, you can tweak these settings thanks to the following options:
+        • --escaping-strategy: Enables or disables output escaping
+        • --csrf-secret: Enables session tokens in forms
+
+    -- Directory Structure Rights
+    chmod 777 cache/ log/
+    -- symfony only ever writes in two directories of a symfony project, cache/ and log/. 
+        The content of these directories should be ignored by your SCM (by editing the svn:ignore property if you use Subversion for instance).
+
+-- Web Server Configuration: The secure Way
+    -- configurer l'alias web "online_credit_mng" pointant sur le chemin:
+        http://localhost:2000/online_credit_mng/
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web
+        puis
+        copier le repertoire :
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\data\web\sf
+        vers le chemin:
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web\sf
+
+        -- copier les fichiers web de doctrine de 'css' et 'images', afin d'avoir des formulaires du generator bien presentés:
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\lib\plugins\sfDoctrinePlugin\web\css\
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\lib\plugins\sfDoctrinePlugin\web\images\
+        vers
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web\sfDoctrinePlugin\css\
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web\sfDoctrinePlugin\images\
+        
+        -- ie
+            Now it is time to change your Apache configuration, to make the new project accessible to the world.
+            Locate and open the httpd.conf configuration file and add the following configuration AT the end:
+                # Be sure to only have this line once in your configuration
+                NameVirtualHost 127.0.0.1:8080
+                # This is the configuration for your project
+                Listen 127.0.0.1:8080
+                <VirtualHost 127.0.0.1:8080>
+                DocumentRoot "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web"
+                DirectoryIndex index.php
+                <Directory "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web">
+                AllowOverride All
+                Allow from All
+                </Directory>
+                Alias /sf /home/sfprojects/credit_mng/lib/vendor/symfony/data/web/sf
+                <Directory "/home/sfprojects/credit_mng/lib/vendor/symfony/data/web/sf">
+                AllowOverride All
+                Allow from All
+                </Directory>
+                </VirtualHost>
+
+
+            -- Configure a dedicated Domain Name
+                If you are an administrator on your machine, it is better to setup virtual hosts instead OF adding a new port each time you start a new project. Instead of choosing a port and add a
+                Listen statement, choose a domain name (for instance the real domain name with
+                .localhost added at the end) and add a ServerName statement:
+                # This is the configuration for your project
+                <VirtualHost 127.0.0.1:80>
+                ServerName www.credit_mng.com.localhost
+                <!-- same configuration as before -->
+                </VirtualHost>
+                The domain name www.credit_mng.com.localhost used in the Apache configuration has to
+                be declared locally. If you run a Linux system, it has to be done in the /etc/hosts file. If
+                you run Windows XP, this file is located in the C:\WINDOWS\system32\drivers\etc\
+                directory.
+                Add in the following line:
+                127.0.0.1 www.credit_mng.com.localhost
+
+    -- The /sf alias gives you access to images and javascript files needed to properly display default symfony pages and the web debug toolbar|Web Debug Toolbar.
+        On Windows, you need to replace the Alias line with something like:
+        Alias /sf "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\data\web\sf"
+        And D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web should be replaced with:
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng
+
+    -- Tester la configuration web:
+
+        -- Acceder à l'envionnement de production pour l'application
+        http://localhost:2000/online_credit_mng/
+        http://localhost:2000/online_credit_mng/index.php/
+
+        -- Acceder à l'envionnement de developpement pour l'application
+        http://localhost:2000/online_credit_mng/frontend_dev.php/
+        The web debug toolbar should show in the top right corner, including small icons proving that your sf/ alias configuration is correct.
+
+
+
+-- Backend and Backend Security
+
+    -- generer l'application de backend
+    php symfony generate:app backend
+
+    -- Backend Security
+
+    -- installer le plugin sfDoctrineGuardPlugin-5.0.0
+        copier le fichier sfDoctrineGuardPlugin-5.0.0.tgz dans le repertoire racine du projet:
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng
+
+        > cp sfDoctrineGuardPlugin-5.0.0.tgz D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\
+        > cd D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\
+        > php symfony plugin:install sfDoctrineGuardPlugin-5.0.0.tgz
+
+        >> plugin    installing plugin "sfDoctrineGuardPlugin-5.0.0.tgz"
+        >> sfPearFrontendPlugin Attempting to discover channel "pear.symfony-project.com"...
+
+        -- warning
+        en cas de retour: 'PHP Warning:  require_once(PEAR.php): failed to open stream: No such file or directory' , pear manquant dans
+        C:\Program Files\EasyPHP-5.3.3\php\php.ini 
+        mettre
+        include_path = ".;D:\achilleromuald\projects\TARLAB\TARLAB_FRMK\PEAR\httpdocs_pearcore_php5_x\PEAR"
+
+    -- configurer la securité avec le plugin sfDoctrineGuardPlugin-5.0.0
+        
+
+        -- Activate the plugin in the config/ProjectConfiguration.class.php
+            ouvrir le fichier :
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\config\ProjectConfiguration.class.php
+            veuillez à l'existance de la ligne:
+                $this->enablePlugins('sfDoctrineGuardPlugin');
+
+            class ProjectConfiguration extends sfProjectConfiguration
+            {
+              public function setup()
+
+              {
+                $this->enablePlugins(array(
+                  'sfDoctrinePlugin', 
+                  'sfDoctrineGuardPlugin',
+                  '...'
+                ));
+              }
+            }
+
+        -- regenerer le projet: Rebuild your model
+            symfony doctrine:build-model
+            symfony doctrine:build-sql 
+
+            symfony cc
+            symfony doctrine:build --all-classes
+
+        -- Update you database tables by starting from scratch (it will delete all the existing tables, then re-create them):
+            symfony doctrine:insert-sql
+
+            >> doctrine  creating tables
+            >> doctrine  created tables successfully
+
+            or do everything with one command
+            symfony doctrine-build-all-reload frontend
+            or you can just create the new tables by using the generated SQL statements in data/sql/plugins.sfGuardAuth.lib.model.schema.sql
+
+
+        -- Load default fixtures (optional - it creates a superadmin user)
+
+        copy \online_credit_mng\plugins\sfDoctrineGuardPlugin\data\fixtures\fixtures.yml.sample \online_credit_mng\data\fixtures\sfGuard.yml
+        mkdir data/fixtures/
+
+        cp plugins/sfDoctrineGuardPlugin/data/fixtures/fixtures.yml.sample data/fixtures/sfGuard.yml
+        
+        -- effectuer le chargement pour l'application de nom "frontend"
+        symfony doctrine:data-load frontend
+
+        -- effectuer le chargement pour l'application de nom "backend"
+        symfony doctrine:data-load backend
+
+        -- Enable one or more modules in your settings.yml (optional)
+            il s'agit de modifier les fichiers:
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\settings.yml
+            et
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\settings.yml
+            au niveau de la rubrique: 
+                all: >   .settings:
+
+            * For your backend application: sfGuardUser, sfGuardGroup, sfGuardPermission
+                D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\settings.yml
+                all:
+                  .settings:
+                    enabled_modules:      [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission]
+
+            * For your frontend application: sfGuardAuth
+                D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\settings.yml
+
+                all:
+                  .settings:
+                    enabled_modules:      [default, sfGuardAuth]
+
+        -- nettoyer le cache: Clear you cache
+        symfony cc
+
+        -- Optionally add the "Remember Me" filter to filters.yml above the security filter:
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\filters.yml
+            et
+            D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\filters.yml
+
+            remember_me:
+              class: sfGuardRememberMeFilter
+             
+            security: ~
+
+
+-- Securiser les applications:  Secure your application
+
+    To secure a symfony application:
+
+    -- Enable the module sfGuardAuth in settings.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\settings.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\settings.yml
+
+          all:
+            .settings:
+              enabled_modules: [..., sfGuardAuth]
+
+    -- Change the default login and secure modules in settings.yml
+
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\settings.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\settings.yml
+
+        all:
+          .settings:
+              # Change the default login and secure modules
+              login_module: sfGuardAuth
+              login_action: signin
+
+              secure_module:    sfGuardAuth
+              secure_action:    secure
+
+    -- Change the parent class in myUser.class.php
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\lib\myUser.class.php
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\lib\myUser.class.php
+        
+        class myUser extends sfGuardSecurityUser
+        {
+        }
+
+    -- Optionally add the following routing rules to routing.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\routing.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\routing.yml
+
+        sf_guard_signin:
+            url:   /login
+            param: { module: sfGuardAuth, action: signin }
+
+        sf_guard_signout:
+            url:   /logout
+            param: { module: sfGuardAuth, action: signout }
+
+        sf_guard_password:
+            url:   /request_password
+            param: { module: sfGuardAuth, action: password }
+
+      You can customize the url parameter of each route. N.B.: You must have a @homepage routing rule (used when a user sign out)
+
+      These routes are automatically registered by the plugin if the module sfGuardAuth is enabled unless you defined sf_guard_plugin_routes_register to false in the app.yml configuration file:
+
+      all:
+        sf_guard_plugin:
+          routes_register: false
+
+    -- Secure some modules or your entire application in security.yml
+
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\security.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\security.yml
+
+      default:
+        is_secure: true
+
+    --  You're done. Now, if you try to access a secure page, you will be redirected to the login page. If you have loaded the default fixture file, try to login with admin as username and admin as password.
+        faire d'abord un clear cache
+        php symfony cc
+
+
+-- Manage your users, permissions and groups
+
+    To be able to manage your users, permissions and groups, sfDoctrineGuardPlugin comes with 3 modules that can be integrated in your backend application. These modules are auto-generated thanks to the symfony admin generator.
+
+    -- Enable the modules in settings.yml
+      all:
+        .settings:
+          enabled_modules: [..., sfGuardGroup, sfGuardPermission, sfGuardUser]
+
+    -- Access the modules with the default route:
+      http://localhost:2000/online_credit_mng/backend.php/sfGuardUser
+
+
+    -- Super administrator flag
+        sfDoctrineGuardPlugin has a notion of super administrator. A user that is a super administrator bypasses all credential checks.
+        The super administrator flag cannot be set on the web, you must set the flag directly in the database or use the pake task:
+
+        symfony guard:promote admin
+
+
+        symfony doctrine:build --all-classes
+
+
+    -- WARNING : bug fix: 
+        * en cas d'erreur (lorsque l'ON appel la page 'http://localhost:2000/online_credit_mng/backend_dev.php/sfGuardUser' par exple):
+            Fatal error: Class 'sfGuardUserFormFilter' not found in sfModelGeneratorConfiguration.class.php
+        * la solution se resume à: 
+            symfony cc
+            symfony doctrine:build --all-classes
+
+
+
+-- configurer l'apparence des vues du projets
+    * les repertoires des css et images du projet sont respectivement:
+    D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web\css\
+    et 
+    D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\web\images\
+    
+    -- rem et definition:
+        The stylesheet file has been included by the include_stylesheets() function call found within the layout <head> tag. The include_stylesheets() function is called a helper. 
+        'A helper' is a function, defined by symfony, that can take parameters and returns HTML code.
+
+        The View layer can be configured by editing the view.yml configuration file of the application.
+        The view.yml configuration file can be customized on a per-module basis.
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\config\view.yml
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\frontend\config\view.yml
+
+        To customize the view for the job module, create a view.yml file in the apps/frontend/modules/job/config/ directory:
+        # apps/frontend/modules/job/config/view.yml
+        indexSuccess:
+            stylesheets: [jobs.css]
+        showSuccess:
+            stylesheets: [job.css]
+
+        # apps/frontend/modules/job/templates/indexSuccess.php
+        # apps/frontend/modules/job/templates/showSuccess.php
+
+        Configuration Principles in symfony
+        For many symfony configuration files, the same setting can be defined at different levels:
+        • The default configuration is located in the framework
+        • The global configuration for the project (in config/)
+        • The local configuration for an application (in apps/APP/config/)
+        • The local configuration restricted to a module (in apps/APP/modules/MODULE/config/)
+        At runtime, the configuration system merges all the values from the different files if they exist and caches the result for better performance.
+        
+    -- redefine homepage for backend
+        php symfony generate:module backend welcome
+
+        symfony cc
+        symfony doctrine:build --all-classes
+        
+        -- The layout
+        The default layout of an application is called layout.php and can be found in the apps/frontend/templates/ directory. This directory contains all the global templates for an
+        application.
+        Replace the default symfony layout with the following code:
+        <!-- apps/frontend/templates/layout.php -->
+
+        D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\apps\backend\templates\layout.php
+
+
+
+-- AJOUTER DE NOUVELLE FONCTIONNALITÉS GRÂCE À LA GENERATION DU CRUD (CREATE READ UPDATE INSERT)
+    
+    -- Editer le schema de description des modeles pour la base de données
+        Il s'agit d'editer le fichier 'schema.yml' (config/doctrine/schema.yml)
+        Ainsi we can use some Doctrine built-in tasks to generate the SQL statements needed to create the database tables:
+
+    -- Créer le modele et la base de données via l'ORM ( Doctrine dans le cas de figure)
+        -- generer les models et classes from your schema files (The ORM also generates PHP classes that map table records to objects)
+            php symfony doctrine:build --model
+        -- Now that your models are present you can generate and insert the SQL optimisé pour le sgbd choisi (generation effectuée dans le repertoire data/sql/, eg: /data/sql/schema.sql)
+            php symfony doctrine:build --sql
+        -- To actually create the tables in the database, you need to run the doctrine task: (generates PHP files in the lib/model/ directory that can be used to interact with the database.)        (rem:l'aide pour cette commande peut être obtenu via l'appel "php symfony help doctrine:insert-sql")
+            php symfony doctrine:insert-SQL 
+
+             
+            -- A propos des classes du modele
+                The doctrine:build --model task generates PHP files in the lib/model/ directory that
+                can be used to interact with the database.
+                By browsing the generated files, you have probably noticed that Doctrine generates three
+                classes per table. For the jobeet_job table:
+                • JobeetJob: An object of this class represents a single record of the jobeet_job
+                table. The class is empty by default.
+                • BaseJobeetJob: The parent class of JobeetJob. Each time you run
+                doctrine:build --model, this class is overwritten, so all customizations must be
+                done in the JobeetJob class.
+                • JobeetJobTable: The class defines methods that mostly return collections of
+                JobeetJob objects. The class is empty by default.
+                The column values of a record can be manipulated with a model object by using some
+                accessors (get*() methods) and mutators (set*() methods):
+                $job = new JobeetJob();
+                $job->setPosition('Web developer');
+                $job->save();
+                echo $job->getPosition();
+                $job->delete();
+                You can also define foreign keys directly by linking objects together:
+                $category = new JobeetCategory();
+                $category->setName('Programming');
+                $job = new JobeetJob();
+                $job->setCategory($category);
+
+        -- Tâche effectuant toutes ces etapes de :build --model à doctrine:insert-sql)   (Generer les form et les validator aussi)
+            php symfony doctrine:build --all --no-confirmation
+
+            ou encore mieux avec chargement des données initiales:
+            php symfony doctrine:build --all --and-load --no-confirmation
+
+
+-- CHARGER LES DONNÉES INITIALES : The Initial Data
+    -- A propos des données initiales (page 38):
+        The tables have been created in the database but there is no data in them. For any web application, there are three types of data:
+        • Initial data: Initial data are needed for the application to work. For example, Jobeet needs some initial categories. If not, nobody will be able to submit a job. We also
+        need an admin user to be able to login to the backend.
+        • Test data: Test Data are needed for the application to be tested. As a developer,you will write tests to ensure that Jobeet behaves as described in the user stories,
+        and the best way is to write automated tests. So, each time you run your tests, you need a clean database with some fresh data to test on.
+        • User data: User data are created by the users during the normal life of the application.
+        Each time symfony creates the tables in the database, all the data are lost.
+        create YAML files in the data/fixtures/ directory and use the doctrine:data-load task to load them into the database.
+        Fixture FILE are located IN "/data/fixtures/" (sample: /data/fixtures/categories.ym ,  data/fixtures/jobs.yml )
+        REM: Propel requires that the fixtures files be prefixed with numbers to determine the order IN which the files will be loaded. With Doctrine this is not required as all fixtures will be loaded and saved in the correct order to make sure foreign keys are set properly.
+
+    -- Tâches disponibles:
+        Loading the initial data into the database is as simple as running the doctrine:data-load task:
+        php symfony doctrine:data-load
+
+        The doctrine:build --all --and-load task is a shortcut for the doctrine:build --all task followed by the doctrine:data-load task. Run the doctrine:build --all --and-load task to make sure everything is generated from your schema. This will generate your forms, filters, models, drop your database and re-create it with all the tables.        
+        php symfony doctrine:build --all --and-load
+
+-- GENERATION DU CRUD (See it in Action in the Browser - Page 40)
+    -- Generation d'un module de CRUD pour un modele donné
+        php symfony doctrine:generate-module --with-show --non-verbose-templates frontend job JobeetJob
+
+        The doctrine:generate-module generates a job module in the frontend application FOR the JobeetJob model. As with most symfony tasks, some files and directories have been created for you under the apps/frontend/modules/job/ directory.
+        The actions/actions.class.php file defines all the available action for the job module:
+        -- Action name ; Description (Page 41)
+        -------------------------
+        index ;  Displays the records of the table
+        show ;  Displays the fields and their values for a given record
+        new ;  Displays a form to create a new record
+        create ;  Creates a new record
+        edit ;  Displays a form to edit an existing record
+        update ;  Updates a record according to the user submitted values
+        delete ;  Deletes a given record from the table
+
+        -- A propos de la methode __toString() 
+            Doctrine will try and provide a base __toString() method by guessing a descriptive COLUMN name like, title, name, subject, etc. If you want something custom then you will need to add your own __toString() methods like below. The JobeetCategory model is able TO guess the __toString() method by using the name column of the jobeet_category table.
+            // lib/model/doctrine/JobeetJob.class.php
+            class JobeetJob extends BaseJobeetJob
+            {
+                public function __toString()
+                {
+                    return sprintf('%s at %s (%s)', $this->getPosition(),
+                       $this->getCompany(), $this->getLocation());
+                }
+            }
+            // lib/model/doctrine/JobeetAffiliate.class.php
+            class JobeetAffiliate extends BaseJobeetAffiliate
+            {
+                public function __toString()
+                {
+                    return $this->getUrl();
+                }
+            }
+
+
+-- ****************************************************  ANNEXE  ****************************************************  
+-- The Environments
+    If you have a look at the web/ directory, you will find two PHP files: index.php AND frontend_dev.php. These files are called front controllers;
+    • The development environment: This is the environment used by web developers when they work on the application to add new features, fix bugs, …
+    • The test environment: This environment is used to automatically test the  application.
+    • The staging environment: This environment is used by the customer to test the application and report bugs or missing features.
+    • The production environment: This is the environment end users interact with.
+
+-- Subversion
+    Windows users can use the great TortoiseSVN15 client to manage their subversion repository.
+
+    Using a source version control allows us to:
+    • work with confidence
+    • revert to a previous version if a change breaks something
+    • allow more than one person to work efficiently on the project
+    • have access to all the successive versions of the application
+
+    First, create a repository for the credit_mng project on the repository server:
+    $ svnadmin create /path/to/credit_mng/repository
+    On your machine, create the basic directory structure:
+    $ svn mkdir -m "created default directory structure"
+    http://svn.example.com/credit_mng/trunk
+    http://svn.example.com/credit_mng/tags
+    http://svn.example.com/credit_mng/branches
+    And checkout the empty trunk/ directory:
+    $ cd /home/sfprojects/credit_mng
+    $ svn co http://svn.example.com/credit_mng/trunk/ .
+    Then, remove the content of the cache/ and log/ directories as we don’t want to put them
+    into the repository.
+    $ rm -rf cache/* log/*
+    Now, make sure to set the write permissions on the cache and logs directories to the
+    appropriate levels so that your web server can write to them:
+    $ chmod 777 cache/ log/
+
+    Now, import all the files and directories:
+    13. http://subversion.tigris.org/
+    14. http://code.google.com/hosting/
+
+    $ svn add *
+    As we will never want to commit files located in the cache/ and log/ directories, you need
+    to specify an ignore list:
+    $ svn propedit svn:ignore cache
+    The default text editor configured for SVN should launch. Subversion must ignore all the
+    content of this directory:
+    *
+    Save and quit. You’re done.
+    Repeat the procedure for the log/ directory:
+    $ svn propedit svn:ignore log
+    And enter:
+    *
+    Finally, commit these changes to the repository:
+    $ svn import -m "made the initial import" .
+    http://svn.example.com/credit_mng/trunk
+    
+
+    
+-- The Project
+    */
+    credit_mng is the place. credit_mng is Open-Source job board software that ONLY does one thing, but does it well. It is easy to use, customize, extend, and embed into your website. It supports multiple languages out of the box, and of course uses the latest Web 2.0 technologies to enhance user experience. It also provides feeds and an API to interact with it programatically.
+    Does it already exist? As as user, you will find a lot of job boards like credit_mng on the Internet. But try to find one which is Open-Source, and as feature-rich as what we propose here.
+
+-- The Project User Stories
+    The credit_mng website has four kind of users:
+    • admin: He owns the website and has the magic power
+    • user: He visits the website to look for a job
+    • poster: He visits the website to post a job
+    • affiliate: He re-publishes some jobs on his website
+    The project has two applications: the frontend (stories F1 to F7, below), where the users interact with the website, and the backend (stories B1 to B3), where admins manage the website.
+    The backend application is secured and requires credentials to access.
+
+    Story F1: On the homepage, the user sees the latest active jobs
+    Story F2: A user can ask for all the jobs in a given category
+    Story F3: A user refines the list with some keywords
+    Story F4: A user clicks on a job to see more detailed information
+    Story F5: A user posts a job
+    Story F6: A user applies to become an affiliate
+    Story F7: An affiliate retrieves the current active job list
+    Story B1: An admin configures the website
+    Story B2: An admin manages the jobs
+    Story B3: An admin manages the affiliates
+
+-- The Data Model
+    -- The Relational Model
+    The user stories we have written yesterday describe the main objects of our project: jobs, affiliates, and categories. Here is the corresponding entity relationship diagram:
+    -- The Schema
+    To store the jobs, affiliates, and categories, we obviously need a relational database.
+    The relational database information must be mapped to an object model. This can be done with an ORM tool17 and thankfully, symfony comes bundled with two of them: Propel18 AND Doctrine19. In this tutorial, we will use Propel.
+
+    As the database does not exist yet and as we want to keep credit_mng database agnostic, let’s
+    -- create the schema file by hand by editing the empty config/schema.yml file:
+    -- The schema is the direct translation of the entity relationship diagram in the YAML format.
+# config/schema.yml
+propel:
+    credit_mng_category:
+        id: ~
+        name: { type: varchar(255), required: true, index: unique }
+
+    credit_mng_job:
+        id: ~
+        category_id: { type: integer, foreignTable: credit_mng_category, foreignReference: id, required: true }
+        type: { type: varchar(255) }
+        company: { type: varchar(255), required: true }
+        logo: { type: varchar(255) }
+        url: { type: varchar(255) }
+        position: { type: varchar(255), required: true }
+        location: { type: varchar(255), required: true }
+        description: { type: longvarchar, required: true }
+        how_to_apply: { type: longvarchar, required: true }
+        token: { type: varchar(255), required: true, index: unique }
+        is_public: { type: boolean, required: true, default: 1 }
+        is_activated: { type: boolean, required: true, default: 0 }
+        email: { type: varchar(255), required: true }
+        expires_at: { type: timestamp, required: true }
+        created_at: ~
+        updated_at: ~
+
+    credit_mng_affiliate:
+        id: ~
+        url: { type: varchar(255), required: true }
+        email: { type: varchar(255), required: true, index: unique }
+        token: { type: varchar(255), required: true }
+        is_active: { type: boolean, required: true, default: 0 }
+        created_at: ~
+
+    credit_mng_category_affiliate:
+        category_id: { type: integer, foreignTable: credit_mng_category, foreignReference: id, required: true, primaryKey: true, onDelete: cascade }
+        affiliate_id: { type: integer, foreignTable: credit_mng_affiliate, foreignReference: id, required: true, primaryKey: true,  onDelete: cascade }
+
+
+
+-- If you have decided to create the tables by writing SQL statements, you can generate the corresponding schema.yml configuration file by running the propel:build-schema task:
+    $ php symfony propel:build-schema
+    -- The above task requires that you have a configured database in databases.yml. We show you how to configure the database in a later step. If you try AND run this task now it won’t work as it doesn’t know what database to build the schema for.
+
+-- The YAML Format
+    According to the official YAML21 website, YAML is “a human friendly data serialization
+    standard for all programming languages”
+    Put another way, YAML is a simple language to describe data (strings, integers, dates,
+    arrays, and hashes).
+    In YAML, structure is shown through indentation, sequence items are denoted by a dash,
+    and key/value pairs within a map are separated by a colon. YAML also has a shorthand
+    syntax to describe the same structure with fewer lines, where arrays are explicitly shown
+    with [] and hashes with {}.
+    If you are not yet familiar with YAML, it is time to get started as the symfony framework
+    uses it extensively for its configuration files. A good starting point is the symfony YAML
+    component documentation22.
+    There is one important thing you need to remember when editing a YAML file: indentation
+    must be done with one or more spaces, but never with tabulations.
+    The schema.yml file contains the description of all tables and their columns. Each column is
+    described with the following information:
+    • type: The column type (boolean, tinyint, smallint, integer, bigint,
+    double, float, real, decimal, char, varchar(size), longvarchar, date,
+    time, timestamp, blob, and clob)
+    • required: Set it to true if you want the column to be required
+    • index: Set it to true if you want to create an index for the column or to unique if
+    you want a unique index to be created on the column.
+    • primaryKey: Define a column as the primary key for the table.
+    • foreignTable, foreignReference: Define a column to be a foreign key to
+    another table.
+    For columns set to ~, which means null in YAML (id, created_at, and updated_at),
+    symfony will guess the best configuration (primary key for id and timestamp for created_at
+    and updated_at).
+
+    The onDelete attribute defines the ON DELETE behavior of foreign keys, and Propel
+    supports CASCADE, SETNULL, and RESTRICT. For instance, when a job record is deleted,
+    all the credit_mng_category_affiliate related records will be automatically deleted by
+    the database or by Propel if the underlying engine does not support this functionality.
+
+-- The Database
+    The symfony framework supports all PDO-supported databases (MySQL, PostgreSQL, SQLite, Oracle, MSSQL, …). PDO23 is the database abstraction layer bundled with PHP.
+
+    -- We need to tell symfony to use this database for the credit_mng project:
+    php symfony configure:database "mysql:host=localhost;dbname=credit_mng_1_4" root mYsEcret
+
+    php symfony configure:database "mysql:host=localhost;dbname=dbs_credit_mng_1_4" root
+    -- If you don’t need a password to access your database ON the development server, just omit the third argument.
+    The configure:database task stores the database configuration into the "config/databases.yml" configuration file. Instead of using the task, you can edit this file by hand.
+    Passing the database password on the command line is convenient but insecure25. Depending on who has access to your environment, it might be better to edit the config/databases.yml to change the password. Of course, to keep the password safe, the configuration file access mode should also be restricted.
+
+-- The ORM
+    Thanks to the database description from the schema.yml file, we can use some Propel builtin tasks to generate the SQL statements needed to create the database tables:
+
+    $ php symfony propel:build --sql
+    
+    The propel:build --sql task generates SQL statements in the data/sql/ directory, optimized for the database engine we have configured:
+
+    -- To actually create the tables in the database, you need to run the propel:insert-sql task:
+        -- 
+            $ php symfony propel:insert-sql    
+            As the task drops the current tables before re-creating them, you are required to confirm the  operation. You can also add the --no-confirmation option to bypass the question, which is useful if you want to run the task from within a non-interactive batch:
+    
+    $ php symfony propel:insert-sql --no-confirmation
+    
+        -- 
+            As for any command line tool, symfony tasks can take arguments and options. Each task comes with a built-in help message that can be displayed by running the help task:
+            $ php symfony help propel:insert-sql
+            The help message lists all the possible arguments and options, gives the default values FOR each of them, and provides some useful usage examples.
+
+    -- The ORM also generates PHP classes that map table records to objects:
+    
+    $ php symfony propel:build --model
+
+    --
+        The propel:build --model task generates PHP files in the lib/model/ directory that
+        can be used to interact with the database.
+        By browsing the generated files, you have probably noticed that Propel generates four classes
+        per table. For the credit_mng_job table:
+        • credit_mngJob: An object of this class represents a single record of the credit_mng_job
+        table. The class is empty by default.
+        • Basecredit_mngJob: The parent class of credit_mngJob. Each time you run
+        propel:build --model, this class is overwritten, so all customizations must be
+        done in the credit_mngJob class.
+        • credit_mngJobPeer: The class defines static methods that mostly return collections
+        of credit_mngJob objects. The class is empty by default.
+        • Basecredit_mngJobPeer: The parent class of credit_mngJobPeer. Each time you run
+        propel:build --model, this class is overwritten, so all customizations must be
+        done in the credit_mngJobPeer class.
+        The column values of a record can be manipulated with a model object by using some
+        accessors (get*() methods) and mutators (set*() methods):
+        $job = new credit_mngJob();
+        $job->setPosition('Web developer');
+        $job->save();
+        echo $job->getPosition();
+        $job->delete();
+        You can also define foreign keys directly by linking objects together:
+        $category = new credit_mngCategory();
+        $category->setName('Programming');
+        $job = new credit_mngJob();
+        $job->setCategory($category);
+
+    -- The propel:build --all task is a shortcut for the tasks we have run in this section and     some more. So, run this task now to generate forms and validators for the credit_mng model  classes:
+
+    $ php symfony propel:build --all --no-confirmation
+
+    -- The Initial Data
+        The tables have been created in the database but there is no data in them. For any web
+        application, there are three types of data:
+        • Initial data: Initial data are needed for the application to work. For example, credit_mng
+        needs some initial categories. If not, nobody will be able to submit a job. We also
+        need an admin user to be able to login to the backend.
+        • Test data: Test Data are needed for the application to be tested. As a developer,
+        you will write tests to ensure that credit_mng behaves as described in the user stories,
+        and the best way is to write automated tests. So, each time you run your tests, you
+        need a clean database with some fresh data to test on.
+        • User data: User data are created by the users during the normal life of the
+        application.
+
+    -- Each time symfony creates the tables in the database, all the data are lost. To populate the     database with some initial data, we could create a PHP script, or execute some SQL statements with the mysql program. But as the need is quite common, there is a better way     with symfony: create YAML files in the data/fixtures/ directory and use the propel:data-load task to load them into the database.
+
+    -- First, create the following fixture files:
+# data/fixtures/010_categories.yml
+credit_mngCategory:
+    design: { name: Design }
+    programming: { name: Programming }
+    manager: { name: Manager }
+    administrator: { name: Administrator }
+
+# data/fixtures/020_jobs.yml
+credit_mngJob:
+    job_sensio_labs:
+        category_id: programming
+        type: full-time
+        company: Sensio Labs
+        logo: sensio-labs.gif
+        url: http://www.sensiolabs.com/
+        position: Web Developer
+        location: Paris, France
+        description: |
+            You've already developed websites with symfony and you want to work with Open-Source technologies. You have a minimum of 3 years experience in web development with PHP or Java and you  wish to participate to development of Web 2.0 sites using the best frameworks available.
+        how_to_apply: |
+            Send your resume to fabien.potencier [at] sensio.com
+        is_public: true
+        is_activated: true
+        token: job_sensio_labs
+        email: job@example.com
+        expires_at: 2010-10-10
+    job_extreme_sensio:
+        category_id: design
+        type: part-time
+        company: Extreme Sensio
+        logo: extreme-sensio.gif
+        url: http://www.extreme-sensio.com/
+        position: Web Designer
+        location: Paris, France
+        description: |
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+
+            Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        how_to_apply: |
+            Send your resume to fabien.potencier [at] sensio.com
+        is_public: true
+        is_activated: true
+        token: job_extreme_sensio
+        email: job@example.com
+        expires_at: 2010-10-10
+
+
+-- The job fixture file references two images. You can download them 
+    (http://www.symfony-project.org/get/credit_mng/sensio-labs.gif,
+    http://www.symfony-project.org/get/credit_mng/extreme-sensio.gif) 
+    and put them under the web/uploads/jobs/ directory.
+-- 
+    A fixtures file is written in YAML, and defines model objects, labelled with a unique name (for   instance, we have defined two jobs labelled job_sensio_labs and job_extreme_sensio).
+    This label is of great use to link related objects without having to define primary keys (which   are often auto-incremented and cannot be set). For instance, the job_sensio_labs job category is programming, which is the label given to the ‘Programming’ category.
+
+    In a YAML file, when a string contains line breaks (like the description column in the job fixture file), you can use the pipe (|) to indicate that the string will span several lines.
+    Although a fixture file can contain objects from one or several models, we have decided TO create one file per model for the credit_mng fixtures.
+    --
+    Notice the numbers prefixing the filenames. This is a simple way to control the order OF data loading. Later in the project, if we need to insert some new fixture file, it will be easy as we have some free numbers between existing ones.
+    In a fixture file, you don’t need to define all columns values. If not, symfony will use the default value defined in the database schema. And as symfony uses Propel to load the data into the database, all the built-in behaviors (like automatically setting the created_at OR updated_at columns) and the custom behaviors you might have added to the model classesare activated. 
+
+-- Loading the initial data into the database is as simple as running the propel:data-load task:
+    
+    $ php symfony propel:data-load
+
+    $ php symfony propel:build --all --and-load
+
+    The propel:build --all --and-load task is a shortcut for the propel:build --all task followed by the propel:data-load task.
+
+-- Module : See it in Action in the Browser
+    -- Let’s see how to display the list of jobs, how to edit an existing job, and how to delete a job. As explained during day 1, a symfony project is made of applications. Each application IS further divided into modules. A module is a self-contained set of PHP code that represents a feature of the application (the API module for example), or a set of manipulations the user can do on a model object (a job module for example).
+    Symfony is able to automatically generate a module for a given model that provides basic manipulation features:
+
+    $ php symfony propel:generate-module --with-show --non-verbose-templates frontend job credit_mngJob
+
+    The propel:generate-module generates a job module in the frontend application FOR the credit_mngJob model. As with most symfony tasks, some files and directories have been created for you under the apps/frontend/modules/job/ directory:
+    Directory Description
+        actions/ The module actions
+        templates/ The module templates
+
+    -- The actions/actions.class.php file defines all the available action for the job module:
+    Action name Description
+        index Displays the records of the table
+        show Displays the fields and their values for a given record
+        new Displays a form to create a new record
+        create Creates a new record
+        edit Displays a form to edit an existing record
+        update Updates a record according to the user submitted values
+        delete Deletes a given record from the TABLE 
+    
+    You can now test the job module in a browser: 
+     
+     http://localhost:2000/credit_mng_1_4/frontend_dev.php/job
+
+     http://credit_mng.localhost/frontend_dev.php/job
+
+
+-- If you try to edit a job, you will have an exception because symfony needs a text representation of a category. A PHP object representation can be defined with the PHP __toString() magic method. The text representation of a category record should be defined in the credit_mngCategory model class:
+    // lib/model/credit_mngCategory.php
+    class credit_mngCategory extends Basecredit_mngCategory
+    {
+        public function __toString()
+        {
+            return $this->getName();
+        }
+    }
+
+-- Now each time symfony needs a text representation of a category, it calls the __toString() method which returns the category name. As we will need a text representation of all model classes at one point or another, let’s define a __toString() method for every model class:
+    // lib/model/credit_mngJob.php
+    class credit_mngJob extends Basecredit_mngJob
+    {
+        public function __toString()
+        {
+        return sprintf('%s at %s (%s)', $this->getPosition(),    $this->getCompany(), $this->getLocation());
+        }
+    }
+
+    // lib/model/credit_mngAffiliate.php
+    class credit_mngAffiliate extends Basecredit_mngAffiliate
+    {
+        public function __toString()
+        {
+            return $this->getUrl();
+        }
+    }
+
+   You can now create and edit jobs. Try to leave a required field blank, or try to enter an INVALID date. That’s right, symfony has created basic validation rules by introspecting the DATABASE schema.    
+
+-- Day 4 : The Controller and the View
+    
+-- debug trace
+
+            doctrine $yaml->parse return NULL
+
+            global  $tchac_debug; $tchac_debug = "exit" ;  # @debug
+
+            global $tchac_debug ;  # @debug
+        if ( isset ($tchac_debug ) && $tchac_debug == "exit")
+            {
+        echo 'public function parse($value)'; var_dump ($data);  echo  preg_last_error();  # @debug
+        exit();   # @debug
+            }
+
+        echo 'protected function prepareSchemaFile($yamlSchemaPath)'; var_dump ($schema);  # @debug
+        var_dump ($projectModels);  # @debug
+        exit();   # @debug
+
+
+        "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\lib\yaml\sfYaml.php"(19,1):class sfYaml
+        => ligne 120
+        "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\lib\plugins\sfDoctrinePlugin\lib\task\sfDoctrineBaseTask.class.php"(84,23):  [./symfony doctrine:build-model|INFO] 
+        => ligne 178
+        "D:\achilleromuald\projects\TARLAB\TASKS\TARLAB043_saar-vie_online_credit_manager\src\online_credit_mng\lib\vendor\symfony\lib\yaml\sfYamlParser.php"(26,1):class sfYamlParser

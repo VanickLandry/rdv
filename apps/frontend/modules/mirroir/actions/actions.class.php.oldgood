@@ -1,0 +1,356 @@
+<?php
+
+/**
+ * mirroir actions.
+ *
+ * @package    credit_mng
+ * @subpackage mirroir
+ * @author     Your name here
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ */
+class mirroirActions extends sfActions
+{
+  public function executeIndex(sfWebRequest $request)
+  {
+    /*
+    $this->rd_mirroirs = Doctrine_Core::getTable('RdMirroir')
+      ->createQuery('a')
+      ->execute();
+    */
+
+    // sorting
+
+    if ($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort'))) 
+    { 
+      $this->setSort(array($request->getParameter('sort'), $request->getParameter('sort_type'))); 
+    } 
+    // pager 
+    if ($request->getParameter('page')) 
+    { 
+      $this->setPage($request->getParameter('page')); 
+    } 
+    $this->pager = $this->getPager(); 
+    $this->sort = $this->getSort();
+
+  }
+
+  public function executeShow(sfWebRequest $request)
+  {
+    $this->rd_mirroir = Doctrine_Core::getTable('RdMirroir')->find(array($request->getParameter('id')));
+    $this->forward404Unless($this->rd_mirroir);
+
+    // conserver l'id du Width and Height choisi
+    // $this->getUser()->setLastSelectedWidth and HeightId($this->rd_mirroir->getId());
+
+  }
+
+
+  public function executeNew(sfWebRequest $request)
+  {
+    $this->form = new RdMirroirForm();
+  }
+  
+  public function executeManyform(sfWebRequest $request)
+  {
+  	    $this->form = new RdMirroirForm();
+  }
+
+
+  public function executeCreate(sfWebRequest $request)
+  {
+		$this->forward404Unless($request->isMethod(sfRequest::POST));
+
+    $this->form = new RdMirroirForm();
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('new');
+  }
+
+  public function executeEdit(sfWebRequest $request)
+  {
+    $this->forward404Unless($rd_mirroir = Doctrine_Core::getTable('RdMirroir')->find(array($request->getParameter('id'))), sprintf(' Width and Height does not exist (%s).', $request->getParameter('id')));
+    $this->form = new RdMirroirForm($rd_mirroir);
+  } 
+  public function executeCalculate(sfWebRequest $request)
+  {
+    
+  }
+
+  public function executeUpdate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
+    $this->forward404Unless($rd_mirroir = Doctrine_Core::getTable('RdMirroir')->find(array($request->getParameter('id'))), sprintf(' Width and Height does not exist (%s).', $request->getParameter('id')));
+    $this->form = new RdMirroirForm($rd_mirroir);
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('edit');
+  }
+  public function executeDelete(sfWebRequest $request)
+  {
+    $request->checkCSRFProtection();
+
+    $this->forward404Unless($rd_mirroir = Doctrine_Core::getTable('RdMirroir')->find(array($request->getParameter('id'))), sprintf('Object rd_mirroir does not exist (%s).', $request->getParameter('id')));
+    $rd_mirroir->delete();
+
+    $this->redirect('mirroir/index');
+  } 
+
+  protected function processForm(sfWebRequest $request, sfForm $form)
+  {
+		// @variables locales
+		$s_current_item_defaut_businesscode = "";
+		$b_formobject_isnew = false;
+
+		// modifier les saisies
+		$a_web_request_parameters = $request->getParameter($form->getName());
+		/*
+		$s_param_type = trim ($a_web_request_parameters['type_parametre']);
+		$s_param_code = trim ($a_web_request_parameters['code_parametre']);
+		
+		// calculer le code du parametre de configuration
+		if (substr ($s_param_code, 0, strlen ($s_param_type)) != $s_param_type)
+		{			
+			$s_param_code = $s_param_type.'_'.$s_param_code;
+			$a_web_request_parameters['code_parametre'] = $s_param_code;
+		}
+		*/
+		$s_param_largeur = trim ($a_web_request_parameters['largeur']);
+		$s_param_largeur_min = trim ($a_web_request_parameters['largeur_min']);
+		$s_param_hauteur = trim ($a_web_request_parameters['hauteur']);
+		$s_param_hauteur_min = trim ($a_web_request_parameters['hauteur_min']);
+		$rais_bas=$s_param_largeur_min-2.2;
+		$rais_haut=$rais_bas;
+		// $dormant=$s_param_hauteur_min * 2;
+		$dormant=$s_param_hauteur_min;
+		$hauteur_couvrejoint=$s_param_hauteur_min + 10;
+		$largeur_couvrejoint=$s_param_largeur_min +10;
+		$sernie=$s_param_hauteur_min -5.5;
+		$chicone=$s_param_hauteur_min -5.5;
+		// $largeur_vitre=$s_param_largeur_min -5;
+		$largeur_vitre=($s_param_largeur_min -14)/2;
+		// $hauteur_vitre=$s_param_hauteur_min -5;
+		$hauteur_vitre=$s_param_hauteur_min -15;
+		$traverse=$rais_bas /2;
+		$quantite=floor(($s_param_largeur*$s_param_hauteur) /($hauteur_vitre*$largeur_vitre));
+
+		// recuperer les saisies
+    $form->bind($a_web_request_parameters, $request->getFiles($form->getName()));
+
+		// Positionné les valeurs calculée et non saisie
+		// $form->getObject()->setXxxx(yyy); 
+		$n_user_id = $this->getUser()->getGuardUser()->getId();
+
+		// si creation nouvelle
+		if ($form->getObject()->isNew() )
+		{
+			// marquer k c'est un insert
+			$b_formobject_isnew = true;
+
+			//
+			$form->getObject()->setCreatedById($n_user_id);
+				// if (($s_param_hauteur *$s_param_largeur)/($s_param_hauteur_min*$s_param_largeur_min)) {
+		   // $this->getUser()->setFlash('error', "La largeur et la hauteur totale doivent etre superieur a la largeur de depart.");
+	  // }
+
+			// preciser aussi l'agence et l'institution d'appartenance du client
+			// $a_affectations = $this->getUser()->getGuardUser()->getCrdmgrUserAgency();
+			// $o_agency = $a_affectations [0] ->getCtrAgency();
+			//	
+			// $form->getObject()->setAgenceId($o_agency->getId());
+			// $form->getObject()->setInstitutionId($o_agency->getInstitutionId());
+
+			# calculer le code par defaut de l'element. Format: {prefix}{datetimecode}.{id_institution}.{id_agence}.{id_item}
+			$s_current_item_defaut_businesscode = 'MIR'.myFrontendHelper::getNowDateTimeCode().'.'.$n_user_id ;  // .'.'.$form->getObject()->getInstitutionId().'.'.$form->getObject()->getAgenceId();
+			$form->getObject()->setCodeMirroir($s_current_item_defaut_businesscode);
+			$form->getObject()->setRaisBas($rais_bas);
+			$form->getObject()->setRaisHaut($rais_haut);
+			$form->getObject()->setDormant($dormant);			
+			$form->getObject()->setHauteurCouvreJoint($hauteur_couvrejoint);
+			$form->getObject()->setLargeurCouvreJoint($largeur_couvrejoint);			
+			$form->getObject()->setSernie($sernie);
+			$form->getObject()->setChicone($chicone);
+			$form->getObject()->setTraverse($traverse);
+			$form->getObject()->setLargeurVitre($largeur_vitre);
+			$form->getObject()->setHauteurVitre($hauteur_vitre);
+			$form->getObject()->setQuantite($quantite);
+
+			
+		}
+		// si simple maj
+		$form->getObject()->setUpdatedById($n_user_id);
+
+
+    //$form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $rd_mirroir = $form->save();
+      // $rd_mirroir = "";
+			
+			// si la modification effectué etait une insertion 
+			if ($b_formobject_isnew)
+			{
+				# ajouter l'id obtenu à partir d l autoincrement				
+				// $rd_mirroir->setCodeMirroir($s_current_item_defaut_businesscode.'.'.$rd_mirroir->getId());
+				# enregistrer la nouvelle modif
+				$rd_mirroir->save();
+			}				 
+
+			$this->getUser()->setFlash('notice', "Les Calculs ont etes enregistres avec succes.");
+			// edit?id='
+      $this->redirect('mirroir/show?id='.$rd_mirroir->getId());
+    }
+	else
+	{
+	$this->getUser()->setFlash('error', "veuillez verifier les saises et vous assurer que vous utilisez les nombres et pas les lettres.");
+	}
+	
+  }
+
+	#REGION PAGINATION
+
+	public function executeFilter(sfWebRequest $request) 
+	{
+
+		$this->setPage(1); 
+		if ($request->hasParameter('_reset')) 
+		{ 
+			$this->setFilters($this->getFilterDefaults()); 
+			//$this->forward ( 'mirroir', 'index' );
+			$this->redirect('mirroir/index'); 
+		} 
+
+		$this->filters = new RdMirroirFormFilter($this->getFilters());  
+		$this->filters->bind($request->getParameter($this->filters->getName()));
+
+		if ($this->filters->isValid()) 
+		{ 
+			$this->setFilters($this->filters->getValues()); 
+
+			//$this->getUser()->setFlash('notice', "Filtre valide.");
+
+			//$this->forward ( 'mirroir', 'index' );
+			$this->redirect('mirroir/index'); 
+		}
+		else
+		{
+			//
+			$this->getUser()->setFlash('error', "Erreur: Echec de validation des filtres pour critaires de recherche.");
+		}
+
+		$this->pager = $this->getPager();
+		$this->sort = $this->getSort();
+		$this->setTemplate('index');
+	}
+
+
+
+	protected function setPage($page) 
+	{ 
+		$this->getUser()->setAttribute('mirroir_index.page', $page); 
+	} 
+
+	protected function getPage() 
+	{ 
+		return $this->getUser()->getAttribute('mirroir_index.page', 1); 
+	} 
+
+
+	protected function buildQuery() 
+	{ 
+		$this->filters = new RdMirroirFormFilter($this->getFilters()); 
+		$query = $this->filters->buildQuery($this->getFilters()); 
+		$this->addSortQuery($query); 
+
+		return $query; 
+	}
+
+
+
+	protected function addSortQuery($query) 
+	{ 
+		if (array(null, null) == ($sort = $this->getSort())) 
+		{ 
+			return; 
+		} 
+		if (!in_array(strtolower($sort[1]), array('asc', 'desc'))) 
+		{ 
+			$sort[1] = 'asc'; 
+		} 
+		$query->addOrderBy($sort[0] . ' ' . $sort[1]); 
+	}
+
+
+
+	protected function getFilters() 
+	{ 
+		return $this->getUser()->getAttribute('mirroir_index.filters', $this->getFilterDefaults()); 
+	} 
+
+	protected function setFilters(array $filters) 
+	{ 
+		return $this->getUser()->setAttribute('mirroir_index.filters', $filters); 
+	} 
+
+	protected function getPager() 
+	{ 
+		// preciser le pas de pagination
+		//$pager = new sfDoctrinePager(5); 
+		$pager = new sfDoctrinePager(sfConfig::get('app_max_items_on_page')); 
+		$pager->setQuery($this->buildQuery()); 
+		$pager->setPage($this->getPage()); 
+		$pager->init(); 
+
+		return $pager; 
+	}
+
+
+
+	protected function getSort() 
+	{ 
+		if (null !== $sort = $this->getUser()->getAttribute('mirroir_index.sort')) 
+		{ 
+			return $sort; 
+		} 
+		$this->setSort($this->getDefaultSort()); 
+		return $this->getUser()->getAttribute('mirroir_index.sort'); 
+	}
+
+	protected function setSort(array $sort) 
+	{ 
+		if (null !== $sort[0] && null === $sort[1]) 
+		{ 
+			$sort[1] = 'asc'; 
+		} 
+
+		$this->getUser()->setAttribute('mirroir_index.sort', $sort);
+
+	}
+
+	// those methods are moved from configuration 
+	protected function getDefaultSort() 
+	{ 
+		return array(null, null); 
+	} 
+
+	public function getFilterDefaults() 
+	{ 
+		return array(); 
+	}
+
+	public function isValidSortColumn($column_name) 
+	{ 
+		if (in_array(strtolower($column_name), array('nom_assurance', 'created_at', 'updated_at'))) 
+		{ 
+			return true;
+		} 
+		return false;
+	}
+
+	#END_REGION PAGINATION
+
+
+
+
+}

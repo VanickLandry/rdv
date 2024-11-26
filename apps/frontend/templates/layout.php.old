@@ -1,0 +1,143 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <?php include_http_metas() ?>
+    <?php include_metas() ?>
+    <?php // include_title() ?>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <?php include_stylesheets() ?>
+    <?php include_javascripts() ?>
+
+     
+
+    <title>Online Credit Manager</title>
+
+    <style type="text/css">
+    <!--
+    .table_no_border
+    {
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    }
+    -->
+    </style>
+    </head>
+    <body>
+
+        <div id="container">
+        
+            <div id="header">
+                <div class="content">
+                        <h1><a href="<?php echo url_for('@homepage') ?>">
+                         <?php echo image_tag('/images/logo.jpg', 'size=169x110') ?>
+                        </a></h1>
+                    <div id="sub_header">
+                         
+                         <!-- imagelink accueil -->
+                         <div class="post">
+                            <h2>Accueil</h2>
+                            <div>
+                            <a href="<?php echo url_for('@homepage') ?>">Accueil</a>
+                            </div> 
+
+                        </div>
+                            
+                        <div class="search">
+
+                            <div class="help" align ="right" > 
+                                <?php // Pour les user authentifiés: preciser son nom
+                                if ($sf_user->isAuthenticated())
+                                {									
+                                    echo   $sf_user->getGuardUser()->getUserSummary() ."<br/>". $sf_user->getGuardUser()->getAgencySummary() ;
+                                } 
+                                ?>								
+                            </div>
+
+                            <?php echo image_tag('/images/empty_pix.gif' , 'size=1x10') ?>
+
+
+                            <?php // Pour les user authentifiés: lister les options de menus 
+                            if ($sf_user->isAuthenticated())
+                            {
+                            ?>														
+                                <div  class="help" >	
+                                     
+                                    <br />		 
+
+                                        <?php foreach (myFrontendHelper::getRoutingLinks($sf_user) as $link): ?>
+                                             <a href="<?php echo url_for('@'.$link) ?>"><?php echo ucfirst($link) ?></a> 
+                                        <?php endforeach; ?>		 
+                                             <!--
+                                             <a href="<?php echo url_for('welcome/bindtoggle') ?>"> Corbeille </a> 
+                                             -->
+                                </div>
+                            <?php 
+                            } 
+                            ?> 
+                             
+                        </div>			
+
+                    </div>
+
+                </div>
+            </div>
+
+        
+    <br />
+
+        <div id="content">
+        <?php if ($sf_user->hasFlash('notice')): ?>
+        <div class="flash_notice">
+        <center>
+        <?php echo $sf_user->getFlash('notice') ?>
+        </center>
+        </div>
+        <?php endif; ?>
+        <?php if ($sf_user->hasFlash('error')): ?>		
+        <div class="flash_error">
+        <center>
+        <?php echo $sf_user->getFlash('error') ?>
+        </div>
+        </center>
+        <?php endif; ?>
+        <div class="content">
+
+        <?php echo $sf_content ?>
+        </div>
+        </div>
+
+
+    <br clear="all" /> 
+
+    <div>
+                <div id="footer">
+                <div class="content">
+
+                <span class="symfony">
+
+                <?php echo image_tag('/images/jobeet-mini.png') ?>
+                (c) copyright 2010
+                <!-- powered by <a href="http://www.symfony-project.org/">
+
+                <?php echo image_tag('/images/symfony.gif', 'alt=symfony framework') ?> -->
+
+                </a>
+                </span>
+                <ul>
+                <!-- <li><a href="#">Accueil</a></li>
+                 <li class="feed"><a href="#">#</a></li>
+                <li><a href="">#</a></li>
+                <li class="last"><a href="#">#</a></li> -->
+                </ul>
+                
+                </div>
+                </div>
+    </div>
+
+
+    </div>
+        
+    </body>
+    </html>

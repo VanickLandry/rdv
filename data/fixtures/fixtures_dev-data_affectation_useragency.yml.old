@@ -1,0 +1,22 @@
+# ******************************* fixtures_dev-data_affectation_useragency.yml *******************************
+
+
+# ******************************* Affectations useragency *******************************
+CrdmgrUserAgency:
+  UserAgency_admin:
+    CtrGuardUser: User_admin
+    CtrAgency: Agence_uce_directiongenerale
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  UserAgency_johndoe:
+    CtrGuardUser: User_johndoe
+    CtrAgency: Agence_uce_directioncommerciale
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+  UserAgency_tchac:
+    CtrGuardUser: User_tchac
+    CtrAgency: Agence_uce_directioncommerciale
+    CtrCreatedBy: [User_admin]
+    CtrUpdatedBy: [User_admin]
+
+ 

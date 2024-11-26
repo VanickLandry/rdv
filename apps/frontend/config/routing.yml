@@ -1,0 +1,256 @@
+# default rules
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+
+#default:
+#  url:   /:module/:action/*
+
+
+# my routes
+  
+hide01__credential__begin__hidden:
+  url:   /hide01__credential__begin__hidden
+  param: { module: welcome, action: index }
+
+# default rules
+homepage:
+  url:   /
+  #param: { module: default, action: index }
+  param: { module: welcome, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules 33002963 PASTEUR Dieutous.
+
+sf_guard_signin:
+    url:   /login
+    param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+    url:   /logout
+    param: { module: sfGuardAuth, action: signout }
+
+hide01__credential__end__hidden:
+  url:   /hide01__credential__end__hidden
+  param: { module: welcome, action: index }
+# Administration__dropdown_begin:
+    # url:   /configurations__dropdown_begin
+    # param: { module: mlparameter, action: index }
+# estimation:
+  # class: sfDoctrineRouteCollection
+  # options:
+    # model:                Estimation
+    # module:               adminestimation
+    # prefix_path:          /adminestimation
+    # column:               id
+    # with_wildcard_routes: true
+
+# glass_price:
+  # class: sfDoctrineRouteCollection
+  # options:
+    # model:                GlassPrice
+    # module:               adminglass
+    # prefix_path:          /adminglass
+    # column:               id
+    # with_wildcard_routes: true	
+# Administration__dropdown_end:
+    # url:   /configurations__dropdown_end
+    # param: { module: mlparameter, action: index }
+
+tools__dropdown_begin:
+    url:   /configurations__dropdown_begin
+    param: { module: mlparameter, action: index }	
+# Calculations:
+    #url:   /welcome/bindtoggle
+    # url:   /Windows
+    # param: { module: mirroir, action: new }
+Windows:
+    #url:   /welcome/bindtoggle
+    url:   /Windows
+    param: { module: mirroir, action: new }
+
+#Door:
+    #url:   /welcome/bindtoggle
+    #url:   /Door
+    #param: { module: mirroir, action: new }
+
+Door_1_battant:
+    url:   /porteunbattant
+    param: { module: porteunbattant, action: new }
+Door_2_battants:
+    url:   /portedeuxbattant
+    param: { module: portedeuxbattant, action: new }
+
+
+tools__dropdown_end:
+    url:   /configurations__dropdown_end
+    param: { module: mlparameter, action: index }
+# stocks__dropdown_begin:
+    # url:   /stocks__dropdown_begin
+    # param: { module: mlparameter, action: index }
+
+# create_new_product:
+    # url:   /mlproduit
+    # param: { module: mlproduit, action: index }
+# add_stock_on_product:
+    # url:   /mlajout
+    # param: { module: mlajout, action: index }
+# create_supplier:
+    # url:   /mlfournisseur
+    # param: { module: mlfournisseur, action: index }	
+# State_of_products__divider_nav_header:
+    # url:   /sfGuardUser
+    # param: { module: sfGuardUser, action: index }
+# State_of_products_in_stock:
+    # url:   /mletatproduit
+    # param: { module: mletatproduit, action: etat }	
+# Comparatif_de_vente_des_produits:
+    # url:   /mletatcomparatifproduit
+    # param: { module: mletatcomparatifproduit, action: etat }	
+# stocks__dropdown_end:
+    # url:   /stocks__dropdown_end
+    # param: { module: mlparameter, action: index }
+# my routes
+# Billing__dropdown_begin:
+    # url:   /prospections__dropdown_begin
+    # param: { module: sfGuardUser, action: index }
+# clients:
+    # url:   /mlclient
+    # param: { module: mlclient, action: index }
+
+# commerciaux:
+    # url:   /mlcommercial
+    # param: { module: mlcommercial, action: index }
+
+# fiches_de_prospections:
+    # url:   /mlFicheProspect
+    # param: { module: mlFicheProspect, action: index }
+# rendez_vous:
+    # url:   /mdlgestionrendezvous
+    # param: { module: mdlgestionrendezvous, action: index }
+# Etats_commerciaux__divider_nav_header:
+    # url:   /sfGuardUser
+    # param: { module: sfGuardUser, action: index }
+# etat_ventes_des_commerciaux:
+    # url:   /mletatcommerciaux
+    # param: { module: mletatcommerciaux, action: index }	
+# Billing__dropdown_end:
+    # url:   /comptes_utilisateurs__dropdown_end
+    # param: { module: sfGuardUser, action: index }
+
+# facturation_et_vente__dropdown_begin:
+    # url:   /comptes_utilisateurs__dropdown_begin
+    # param: { module: sfGuardUser, action: index }
+# ventes:
+    # url:   /mlvente
+    # param: { module: mlvente, action: index }	
+# proformats:
+    # url:   /mlproformat
+    # param: { module: mlproformat, action: index }
+
+# factures:
+    # url:   /mlfacture
+    # param: { module: mlfacture, action: index }
+# Etats_ventes__divider_nav_header:
+    # url:   /sfGuardUser
+    # param: { module: sfGuardUser, action: index }
+# etat_des_ventes_ENF:
+    # url:   /mletatventeagence
+    # param: { module: mletatvente, action: index }	
+# facturation_et_vente__dropdown_end:
+    # url:   /comptes_utilisateurs__dropdown_end
+    # param: { module: sfGuardUser, action: index }
+# paiements__dropdown_begin:
+    # url:   /comptes_utilisateurs__dropdown_begin
+    # param: { module: sfGuardUser, action: index }
+# paiements_factures:
+    # url:   /mlpayment
+    # param: { module: mlpayment, action: index }	
+# paiements_commerciaux:
+    # url:   /mlpaiementapporteur
+    # param: { module: mlpaiementapporteur, action: index }	
+# paiements__dropdown_end:
+    # url:   /comptes_utilisateurs__dropdown_end
+    # param: { module: sfGuardUser, action: index }	
+# navigation__dropdown_begin:
+    # url:   /configurations__dropdown_begin
+    # param: { module: mlparameter, action: index }	
+# corbeille:
+    # url:   /welcome/bindtoggle
+    # url:   /corbeille
+    # param: { module: welcome, action: bindtoggle }
+
+# navigation__dropdown_end:
+    # url:   /configurations__dropdown_end
+    # param: { module: mlparameter, action: index }
+Glass_Prices__dropdown_begin:
+    url:   /configurations__dropdown_begin
+    param: { module: mlparameter, action: index }	
+Add_new_Glass:
+    url:   /glassprice
+    param: { module: glassprice, action: new }
+Cost:
+    url:   /estim
+    param: { module: estim, action: new }
+GlassPrice list:
+    url:   /glasspricelist
+    param: { module: glassprice, action: index }
+
+Glass_Prices__dropdown_end:
+    url:   /configurations__dropdown_end
+    param: { module: mlparameter, action: index }
+
+Parameters__dropdown_begin:
+    url:   /configurations__dropdown_begin
+    param: { module: mlparameter, action: index }	
+parameter:
+    url:   /mlparameter
+    param: { module: mlparameter, action: index }
+
+Parameters__dropdown_end:
+    url:   /configurations__dropdown_end
+    param: { module: mlparameter, action: index }
+
+mon_compte__credential__begin__hidden:
+    url:   /mon_compte__credential__begin__hidden
+    param: { module: mlChangeMyPassword, action: index }
+
+mot_de_passe:
+    url:   /mlChangeMyPassword
+    param: { module: mlChangeMyPassword, action: index }
+
+deconnexion:
+    url:   /welcome/signout
+    param: { module: welcome, action: signout }
+
+#deconnexion:
+#    url:   /logout
+#    param: { module: sfGuardAuth, action: signout }
+
+mon_compte__credential__end__hidden:
+    url:   /mon_compte__credential__end__hidden
+    param: { module: mlChangeMyPassword, action: index }
+ 
+hide02__credential__begin__hidden:
+  url:   /hide02__credential__begin__hidden
+  param: { module: welcome, action: index }
+
+hide02__credential__begin__hidden:
+  url:   /hide02__credential__begin__hidden
+  param: { module: mlproduit, action: index }
+
+  
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+hide02__credential__end__hidden:
+  url:   /hide02__credential__end__hidden
+  param: { module: welcome, action: index }
+

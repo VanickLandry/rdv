@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=76.162.254.173;dbname=C318401_credit_manager'
+      username: C318401_dbanroot
+      password: r4O0bIlmzp

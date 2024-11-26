@@ -1,0 +1,70 @@
+# <?******************************* fixtures_dev-data_user-group-permission *******************************
+
+# ******************************* user *******************************
+sfGuardUser:
+  User_admin:
+    first_name:     Verra
+    last_name:      Cruz
+    email_address:  admin@admin.com
+    username:       admin
+    password:       admin
+    #is_super_admin: false
+    #created_at: '2008-12-17 00:01:00'
+    Groups:         [Group_administrateurs]
+  User_johndoe:
+    first_name:     John
+    last_name:      Doe
+    email_address:  john.doe@saarvie.com
+    username:       vitre
+    password:       vitre
+    Groups:         [Group_assureurs_saarvie]
+  User_tchac:
+    first_name:     Achille
+    last_name:      Tchapi
+    email_address:  tchac@saarvie.com
+    username:       tchac
+    password:       tchac
+    Groups:         [Group_assureurs_saarvie_master_operator]
+  User_lucyloo:
+    first_name:     Lucy
+    last_name:      Loo1
+    email_address:  lucy.loo@ecobank.com
+    username:       lucy.loo
+    password:       lucy.loo
+    Groups:         [Group_gestionnairesclientsbanque]
+
+# ******************************* group *******************************
+sfGuardGroup:
+  Group_administrateurs:
+    name:           Administrateurs
+    description:    Groupe administrateurs
+    Permissions:    [Permission_administrateur]
+  Group_assureurs_saarvie:
+    name:           Saar-vie - Assureurs
+    description:    groupe Assureurs de Saar-vie
+    Permissions:    [Permission_assureur]
+  Group_gestionnairesclientsbanque:
+    name:           Gestionnaires clients banque
+    description:    Groupe des gestionnaires de clients de banque
+    Permissions:    [Permission_gestionnaireclientsbanque]
+  Group_assureurs_saarvie_master_operator:
+    name:           Saar-vie - Master Operator
+    description:    Saar-vie - Operateur a pouvoir
+    Permissions:    [Permission_master_operator]
+
+# ******************************* permission *******************************
+sfGuardPermission:
+  Permission_administrateur:
+    name:           administrateur
+    description:    Administrator permission
+  Permission_assureur:
+    name:           assureur
+    description:    Permission assureur
+  Permission_gestionnaireclientsbanque:
+    name:           bank_operator
+    description:    Permission gestionnaire de clients de banque
+  Permission_master_operator:
+    name:           master_operator
+    description:    Operateur a pouvoir
+
+ 

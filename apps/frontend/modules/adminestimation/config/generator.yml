@@ -1,0 +1,32 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Estimation
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estimation
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        display: [length,width]
+      list:
+        display: [length,width]
+        batch_actions:
+          # edit:    ~
+          _delete:    ~
+      edit:
+        display: [length,width]
+      filter:
+        display: [length,width]
+      form:    
+        display: [is_active]
+      new:
+        display: [is_active,length,width]
+      show:
+        display: [is_active,length,width]

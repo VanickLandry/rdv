@@ -1,0 +1,23 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+ 
+default:
+    http_metas:
+        content-type: text/html
+
+    metas:
+        title:   Facult&eacute; De G&eacute;nie Industriel
+        slot:   penda
+        description:  Gestionnaire des notes
+        keywords:     Gestionnaire des notes
+        #language:     en
+        #robots:       index, follow
+
+    stylesheets:    [main.css, bootstrap.css, bootstrap-responsive.css, rta_css_main.css,style.css]
+
+    #javascripts:    [jquery-1.7.1.js,jquery.js]
+    # javascripts:    [jquery-1.7.1.js,jquery.js,loader.js,bootstrap-button.js]
+
+    has_layout:     true
+    layout:         layout

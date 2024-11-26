@@ -1,0 +1,18 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/08-Security
+
+# -- The default configuration of security.yml, installed by default for each application, authorizes access to anybody:
+# -- By setting the is_secure key to true in the application security.yml file, the entire application will require authentication for all users.
+# -- When an un-authenticated user tries to access a secured action, symfony forwards the request to the login action configured in settings.yml.
+
+
+default:
+  is_secure: true 
+  credentials: [[assureur, bank_operator, master_operator]]
+#-- When a user is authenticated, the access to some actions can be even more restricted by defining credentials. When credentials are defined, a user must have the required credentials to access the action:
+#  credentials: admin
+#-- If a user must have the credential A and the credential B, wrap the credentials with square brackets:
+#  credentials: [A, B]
+#-- If a user must have credential the A or the credential B, wrap them with two pairs of square brackets:
+#  credentials: [[A, B]]
+#-- You can also mix and match brackets to describe any kind of Boolean expression with any number of credentials.

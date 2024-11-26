@@ -1,0 +1,29 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           GlassPrice
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          glass_price
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    config:
+      actions: ~
+      fields:  
+        display: [label,price]
+      list:
+        display: [label,price]
+      filter:
+        display: [label,price]
+      edit:
+        display: [label,price]
+      form:    
+        display: [is_active]
+      new:
+        display: [is_active,price,label]
+      show:
+        display: [is_active,price,label]
+      

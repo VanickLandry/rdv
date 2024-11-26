@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CrdmgrParameter
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ml_parameter
+    with_doctrine_route:   true
+
+    config:
+      #actions: ~
+      #fields:  ~
+      #list:    ~
+      filter:
+        #display: [is_active, type_parametre, code_parametre, label_param, description_param,created_at, updated_at, created_by, updated_by]
+      #form:    ~
+      #edit:    ~
+      #new:     ~
+
+
+
+filter:
+  display: [ existing_fields, paid_up_cap_more]
+  #display: [is_active, type_parametre, code_parametre, label_param, description_param,created_at, updated_at, created_by, updated_by]
+  fields: 
+    paid_up_cap_more: { label: Paid up capital (RM) - more than }

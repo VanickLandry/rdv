@@ -1,0 +1,9 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=dbs_online_credit_mng'
+      username: root
+      password: 
+      #username: dba_onlncrd_mng
+      #password: pwd_4_crd_mng_dba
